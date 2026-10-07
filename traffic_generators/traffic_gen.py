@@ -1,10 +1,8 @@
 import random
 import math
 import json
-
 seed=7 #random seed
-idle_timeout=30 #the server goes cold after 30 seconds of no requests
-trace_duration_exp=10000 #how long the traffic shld keep generating
+idle_timeout=5 
 
 def possion_trace(lamda,trace_duration,seed):
     reqs=[]
@@ -19,10 +17,22 @@ def possion_trace(lamda,trace_duration,seed):
         s+=t
     return reqs[:len(reqs)-1]
 
-lamda=[0.07675283643313485,0.023104906018664842,0.0035120171885942093]
-json_file_names=["low_res.json","medi_res.json","high_res.json"]
+def find(idle_timeout):
+    a=[]
+    for p in [0.5,0.9]:
+        templam=-math.log(p)/idle_timeout
+        a.append(templam)
+    return a
 
-for i,j in zip(lamda,json_file_names):
-    file=open(j,"w",encoding="utf-8")
-    json.dump(possion_trace(i,trace_duration_exp,seed),file)
-    file.close()
+pval=[0.5,0.9]
+lamda=find(idle_timeout)
+json_file_names=["p05.json","p09.json"]
+duration=1800
+
+if(__name__=="__main__"):
+    for i,j,z in zip(lamda,json_file_names,pval):
+        file=open(j,"w",encoding="utf-8")
+        json.dump({"metadata":{"lamda":i,"duration":duration,"pval":z,"t":idle_timeout,"seed":seed},
+                "trace":possion_trace(i,duration,seed)},file)
+        file.close()
+        seed+=1

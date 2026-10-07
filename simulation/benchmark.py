@@ -1,111 +1,167 @@
+import csv
 import socket
 import subprocess
 import time
+
 import numpy as np
 import requests
 
 IMAGE_NAME = "serverless-sim:latest"
-CONTAINER_NAME = "serverless-sim-runner"
-NUM_RUNS = 12         # Total runs (N)
-WARMUP_RUNS = 2       # Discard first 2 runs as system warm-up
-WARM_SAMPLES = 5      # Number of warm requests per run
+NAME_PREFIX = "serverless-sim-run"   # each run gets NAME_PREFIX + run_id
+WARMUP_RUNS = 2                      # kept in the CSV (is_warmup=True) but excluded from stats
+MEASURED_RUNS = 30                   # runs that count
+WARM_SAMPLES = 5                     # warm requests per run
+READY_DEADLINE_S = 30.0              # give up if no 200 OK by then
+POLL_TIMEOUT_S = 0.5                 # per attempt while waiting for the container
+REQUEST_TIMEOUT_S = 5.0              # per warm request
+OUT_CSV = "benchmark_results.csv"
+
+FIELDS = [
+    "run_id", "is_warmup", "phase", "req_idx",
+    "latency_ms",        # cold: t0 -> first 200 OK (end to end). warm: one request round trip.
+    "cold_flag",         # the flag the function itself reported
+    "flag_ok",           # cold row: flag was True AND every warm flag was False
+    "t_created_ms",      # cold row: t0 -> `docker run -d` returned (container created and started)
+    "app_ready_ms",      # cold row: `docker run -d` returned -> first 200 OK
+    "first_request_ms",  # cold row: round trip of the successful request alone
+    "init_duration_ms",  # cold row: reported by the function (see app.py for what it covers)
+    "memory_rss_mb",     # cold row: current RSS reported by the function
+]
+
 
 def get_free_port() -> int:
-    """Requests an available ephemeral TCP port directly from the OS kernel."""
+    """Ask the OS for a free ephemeral port.
+    Small race: another process could grab it before Docker binds it.
+    If that happens `docker run` fails and we raise loudly."""
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        s.bind(('127.0.0.1', 0))
+        s.bind(("127.0.0.1", 0))
         return s.getsockname()[1]
 
-def cleanup_leftovers():
-    """Removes any container left over from interrupted or failed runs."""
-    subprocess.run(
-        ["docker", "rm", "-f", CONTAINER_NAME],
-        stdout=subprocess.DEVNULL,
-        stderr=subprocess.DEVNULL
-    )
 
-def run_single_benchmark(run_id: int) -> dict:
+def check_image():
+    r = subprocess.run(["docker", "image", "inspect", IMAGE_NAME], capture_output=True)
+    if r.returncode != 0:
+        raise SystemExit(f"Image {IMAGE_NAME} not found. Build or pull it first, "
+                         "so the benchmark never times a download.")
+
+
+def cleanup_leftovers():
+    """Remove every container from earlier interrupted runs."""
+    r = subprocess.run(["docker", "ps", "-aq", "--filter", f"name={NAME_PREFIX}"],
+                       capture_output=True, text=True)
+    ids = r.stdout.split()
+    if ids:
+        subprocess.run(["docker", "rm", "-f", *ids], capture_output=True)
+
+
+def timed_get(endpoint: str, timeout: float):
+    """One request on a FRESH connection (requests.get makes a new session each call),
+    so cold and warm requests both pay TCP connection setup. Same footing."""
+    t_start = time.perf_counter()
+    res = requests.get(endpoint, timeout=timeout)
+    t_end = time.perf_counter()
+    return res, (t_end - t_start) * 1000.0
+
+
+def run_single_benchmark(run_id: int, is_warmup: bool) -> list:
+    name = f"{NAME_PREFIX}{run_id}"
     port = get_free_port()
     endpoint = f"http://127.0.0.1:{port}/"
 
-    # --- TIMED SECTION START ---
-    t0 = time.perf_counter()
+    try:
+        # --- cold phase ---
+        t0 = time.perf_counter()
+        started = subprocess.run(
+            ["docker", "run", "-d", "--rm", "--name", name,
+             "-p", f"{port}:8080", IMAGE_NAME],
+            capture_output=True, text=True,
+        )
+        t_created = time.perf_counter()
+        if started.returncode != 0:
+            raise RuntimeError(f"docker run failed: {started.stderr.strip()}")
 
-    # Launch container detached with auto-removal (--rm)
-    proc = subprocess.Popen([
-        "docker", "run", "--rm",
-        "--name", CONTAINER_NAME,
-        "-p", f"{port}:8080",
-        IMAGE_NAME
-    ], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        deadline = t0 + READY_DEADLINE_S
+        while True:
+            if time.perf_counter() > deadline:
+                raise TimeoutError(f"run {run_id}: no 200 OK within {READY_DEADLINE_S}s")
+            try:
+                res, first_request_ms = timed_get(endpoint, POLL_TIMEOUT_S)
+                if res.status_code == 200:
+                    t_ready = time.perf_counter()
+                    break
+            except (requests.exceptions.ConnectionError, requests.exceptions.Timeout):
+                pass
+            time.sleep(0.002)
 
-    t_created = time.perf_counter()
+        cold_body = res.json()
+        cold_flag = cold_body["cold"]        # plain indexing: a missing key should crash
+        telemetry = cold_body["metrics"]
 
-    # Poll endpoint until first 200 OK (Cold request)
-    cold_response = None
-    session = requests.Session()
+        # --- warm phase (same container) ---
+        warm = []
+        for _ in range(WARM_SAMPLES):
+            res, ms = timed_get(endpoint, REQUEST_TIMEOUT_S)
+            res.raise_for_status()
+            warm.append((ms, res.json()["cold"]))
+    finally:
+        # Cleanup happens after all timing is done; rm -f is synchronous.
+        subprocess.run(["docker", "rm", "-f", name], capture_output=True)
 
-    while True:
-        try:
-            res = session.get(endpoint, timeout=0.5)
-            if res.status_code == 200:
-                t_ready = time.perf_counter()
-                cold_response = res.json()
-                break
-        except (requests.exceptions.ConnectionError, requests.exceptions.Timeout):
-            time.sleep(0.002)  # Low-overhead 2ms polling sleep
+    flag_ok = (cold_flag is True) and all(f is False for _, f in warm)
 
-    # Record cold metric
-    cold_latency_ms = (t_ready - t0) * 1000.0
-    cold_flag = cold_response.get("cold", False)
-
-    # Collect warm samples on same running container
-    warm_latencies = []
-    warm_flags = []
-
-    for _ in range(WARM_SAMPLES):
-        t_w_start = time.perf_counter()
-        res = session.get(endpoint)
-        t_w_end = time.perf_counter()
-
-        warm_latencies.append((t_w_end - t_w_start) * 1000.0)
-        warm_flags.append(res.json().get("cold", False))
-
-    # Stop container and wait for process cleanup
-    subprocess.run(["docker", "kill", CONTAINER_NAME], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    proc.wait()
-    # --- TIMED SECTION END ---
-
-    # Assert cold flag rule: Must be True on first request, False on all warm requests
-    flag_check = (cold_flag is True) and all(f is False for f in warm_flags)
-
-    return {
-        "run_id": run_id,
+    rows = [{
+        "run_id": run_id, "is_warmup": is_warmup, "phase": "cold", "req_idx": 0,
+        "latency_ms": (t_ready - t0) * 1000.0,
+        "cold_flag": cold_flag, "flag_ok": flag_ok,
         "t_created_ms": (t_created - t0) * 1000.0,
-        "cold_latency_ms": cold_latency_ms,
-        "cold_flag": cold_flag,
-        "warm_latencies_ms": warm_latencies,
-        "flag_check": flag_check,
-        "telemetry": cold_response.get("metrics", {})
-    }
+        "app_ready_ms": (t_ready - t_created) * 1000.0,
+        "first_request_ms": first_request_ms,
+        "init_duration_ms": telemetry["init_duration_ms"],
+        "memory_rss_mb": telemetry["memory_rss_mb"],
+    }]
+    for i, (ms, flag) in enumerate(warm, start=1):
+        rows.append({
+            "run_id": run_id, "is_warmup": is_warmup, "phase": "warm", "req_idx": i,
+            "latency_ms": ms, "cold_flag": flag, "flag_ok": flag_ok,
+        })
+    return rows
+
+
+def summarize(rows: list):
+    for phase in ("cold", "warm"):
+        vals = [r["latency_ms"] for r in rows if r["phase"] == phase and not r["is_warmup"]]
+        if not vals:
+            continue
+        print(f"{phase:>4}: n={len(vals):3d}  median={np.median(vals):8.2f} ms  "
+              f"p95={np.percentile(vals, 95):8.2f} ms  "
+              f"min={min(vals):8.2f}  max={max(vals):8.2f}")
+    bad = sum(1 for r in rows if r["phase"] == "cold" and not r["flag_ok"])
+    print(f"flag check failures: {bad} run(s)")
+
 
 if __name__ == "__main__":
+    check_image()
     cleanup_leftovers()
-    print(f"[+] Starting Benchmark: {NUM_RUNS} total runs ({WARMUP_RUNS} warm-up runs will be discarded)...")
+    total = WARMUP_RUNS + MEASURED_RUNS
+    print(f"[+] {total} runs: first {WARMUP_RUNS} are warm-up (saved, not counted).")
 
-    results = []
-    for run_i in range(1, NUM_RUNS + 1):
-        data = run_single_benchmark(run_i)
-        results.append(data)
+    all_rows = []
+    # Policy: a run that times out or crashes stops the benchmark loudly.
+    # A wrong cold flag is recorded (flag_ok=False) and the loop continues.
+    with open(OUT_CSV, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=FIELDS, restval="")
+        writer.writeheader()
+        for run_id in range(1, total + 1):
+            is_warmup = run_id <= WARMUP_RUNS
+            rows = run_single_benchmark(run_id, is_warmup)
+            writer.writerows(rows)
+            f.flush()                       # a crash later does not lose finished runs
+            all_rows.extend(rows)
+            cold = rows[0]
+            print(f"Run {run_id:02d}/{total:02d}{' (warm-up)' if is_warmup else ''} | "
+                  f"cold {cold['latency_ms']:.1f} ms | "
+                  f"flag {'OK' if cold['flag_ok'] else 'FAILED'}")
 
-        # Print progress outside of the timed section
-        status = "PASSED" if data["flag_check"] else "FAILED"
-        print(f"Run {run_i:02d}/{NUM_RUNS:02d} | Cold Latency: {data['cold_latency_ms']:.2f} ms | Cold Flag Check: {status}")
-
-    # Check rule assertion
-    all_passed = all(r["flag_check"] for r in results)
-    print(f"\n[+] Cold Flag Verification: {'ALL PASSED' if all_passed else 'FAILED'}")
-
-    # Save raw results for Step 5 analysis
-    np.save("raw_benchmark_results.npy", results)
-    print("[+] Saved raw metrics to 'raw_benchmark_results.npy'. Ready for Step 5!")
+    print()
+    summarize(all_rows)
+    print(f"[+] Raw rows saved to {OUT_CSV}")
