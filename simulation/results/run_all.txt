@@ -1,0 +1,149 @@
+Total requests: 227
+Errors: 0
+
+--- Schedule Lag (ms) ---
+mean: 0.367
+95th percentile: 0.895
+max lag: 1.839
+
+--- Request Latency (ms) ---
+mean: 399.251
+95th percentile: 758.131
+max latency: 916.715
+
+Execution log written to: /home/kauboi007/Documents/projects/balmer/simulation/results/poisson_p05_keepalive.json
+Total requests: 250
+Errors: 0
+
+--- Schedule Lag (ms) ---
+mean: 0.573
+95th percentile: 0.977
+max lag: 1.419
+
+--- Request Latency (ms) ---
+mean: 329.100
+95th percentile: 680.644
+max latency: 888.353
+
+Execution log written to: /home/kauboi007/Documents/projects/balmer/simulation/results/periodic_p05_keepalive.json
+Total requests: 250
+Errors: 0
+
+--- Schedule Lag (ms) ---
+mean: 0.244
+95th percentile: 0.693
+max lag: 1.582
+
+--- Request Latency (ms) ---
+mean: 441.186
+95th percentile: 757.257
+max latency: 854.619
+
+Execution log written to: /home/kauboi007/Documents/projects/balmer/simulation/results/bursty_p05_keepalive.json
+Total requests: 250
+Errors: 0
+
+--- Schedule Lag (ms) ---
+mean: 0.300
+95th percentile: 0.852
+max lag: 2.958
+
+--- Request Latency (ms) ---
+mean: 351.226
+95th percentile: 751.876
+max latency: 857.644
+
+Execution log written to: /home/kauboi007/Documents/projects/balmer/simulation/results/bursty_p03_keepalive.json
+Total requests: 250
+Errors: 0
+
+--- Schedule Lag (ms) ---
+mean: 0.299
+95th percentile: 0.848
+max lag: 1.348
+
+--- Request Latency (ms) ---
+mean: 651.653
+95th percentile: 749.975
+max latency: 1742.547
+
+Execution log written to: /home/kauboi007/Documents/projects/balmer/simulation/results/periodic_p09_keepalive.json
+Total requests: 34
+Errors: 0
+
+--- Schedule Lag (ms) ---
+mean: 0.376
+95th percentile: 0.837
+max lag: 1.038
+
+--- Request Latency (ms) ---
+mean: 626.579
+95th percentile: 746.330
+max latency: 796.160
+
+Execution log written to: /home/kauboi007/Documents/projects/balmer/simulation/results/poisson_p09_keepalive.json
+estimated total: 94 min
+=== poisson_p05 ===
+n=227 errors=0 classes={'cold': 122, 'warm': 86, 'cold_wait': 19}
+cold fraction (cold + cold_wait) = 0.621 | predicted from trace = 0.537
+lag ms: mean=0.37 max=1.84
+latency cold: median=702.9 ms p95=772.8 ms n=122
+latency warm: median=2.8 ms p95=3.3 ms n=86
+latency cold_wait: median=224.4 ms p95=570.4 ms n=19
+t_prime controller=2.5 replayer=2.5
+containers booted=122 function cold flags=122
+PASS
+
+=== periodic_p05 ===
+n=250 errors=0 classes={'cold': 124, 'warm': 126}
+cold fraction (cold + cold_wait) = 0.496 | predicted from trace = 0.496
+lag ms: mean=0.57 max=1.42
+latency cold: median=652.7 ms p95=689.1 ms n=124
+latency warm: median=3.1 ms p95=3.4 ms n=126
+t_prime controller=2.5 replayer=2.5
+containers booted=124 function cold flags=124
+PASS
+
+=== bursty_p05 ===
+n=250 errors=0 classes={'cold': 140, 'cold_wait': 33, 'warm': 77}
+cold fraction (cold + cold_wait) = 0.692 | predicted from trace = 0.560
+lag ms: mean=0.24 max=1.58
+latency cold: median=700.8 ms p95=767.4 ms n=140
+latency cold_wait: median=309.5 ms p95=629.9 ms n=33
+latency warm: median=2.6 ms p95=3.0 ms n=77
+t_prime controller=2.5 replayer=2.5
+containers booted=140 function cold flags=140
+PASS
+
+=== bursty_p03 ===
+n=250 errors=0 classes={'cold': 93, 'warm': 104, 'cold_wait': 53}
+cold fraction (cold + cold_wait) = 0.584 | predicted from trace = 0.372
+lag ms: mean=0.30 max=2.96
+latency cold: median=690.5 ms p95=791.5 ms n=93
+latency warm: median=2.6 ms p95=3.1 ms n=104
+latency cold_wait: median=468.7 ms p95=645.4 ms n=53
+t_prime controller=2.5 replayer=2.5
+containers booted=93 function cold flags=93
+PASS
+
+=== periodic_p09 ===
+n=250 errors=0 classes={'cold': 230, 'warm': 20}
+cold fraction (cold + cold_wait) = 0.920 | predicted from trace = 0.920
+lag ms: mean=0.30 max=1.35
+latency cold: median=705.8 ms p95=750.6 ms n=230
+latency warm: median=2.7 ms p95=3.4 ms n=20
+t_prime controller=2.5 replayer=2.5
+containers booted=230 function cold flags=230
+PASS
+
+=== poisson_p09 ===
+n=34 errors=0 classes={'cold': 29, 'warm': 3, 'cold_wait': 2}
+cold fraction (cold + cold_wait) = 0.912 | predicted from trace = 0.853
+lag ms: mean=0.38 max=1.04
+latency cold: median=700.6 ms p95=747.1 ms n=29
+latency warm: median=3.0 ms p95=3.2 ms n=3
+latency cold_wait: median=598.2 ms p95=679.5 ms n=2
+t_prime controller=2.5 replayer=2.5
+containers booted=29 function cold flags=29
+PASS
+

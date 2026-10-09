@@ -2,6 +2,7 @@ import time
 
 # Process clock starts here: the first line that runs once the Python
 # interpreter itself has booted. Interpreter boot time is NOT included.
+#app.py
 PROCESS_START_TIME = time.time()
 _T_INIT_START = time.perf_counter()
 
@@ -34,6 +35,9 @@ def current_rss_mb() -> float:
                 return int(line.split()[1]) / 1024.0  # value is in kB
     raise RuntimeError("VmRSS not found in /proc/self/status")
 
+@app.route("/health")
+def health():
+    return "ok", 200
 
 @app.route("/", methods=["GET"])
 def invoke():
