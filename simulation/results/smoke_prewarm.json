@@ -1,0 +1,237 @@
+{
+  "metadata": {
+    "trace": "/home/kauboi007/Documents/projects/balmer/simulation/../traffic_generators/p05.json",
+    "seed": 7,
+    "k": 10.0,
+    "T": 5.0,
+    "t_prime": 0.5,
+    "p": 64,
+    "start_time_iso": "2026-10-09T01:43:07Z",
+    "start_time_epoch": 1791510187.7016034,
+    "n": 20,
+    "url": "http://127.0.0.1:9000",
+    "delay": 0.0
+  },
+  "requests": [
+    {
+      "index": 0,
+      "scheduled_rel_sec": 0.8133395662495886,
+      "send_rel_sec": 0.8142944870005522,
+      "lag_ms": 0.9549207509635949,
+      "latency_ms": 674.5167689996379,
+      "server_delta_ms": null,
+      "cold_flag": true,
+      "controller_req_class": "cold",
+      "error": null
+    },
+    {
+      "index": 1,
+      "scheduled_rel_sec": 2.1777502156607325,
+      "send_rel_sec": 2.1784126940001443,
+      "lag_ms": 0.6624783394117983,
+      "latency_ms": 655.5492910001703,
+      "server_delta_ms": null,
+      "cold_flag": true,
+      "controller_req_class": "cold",
+      "error": null
+    },
+    {
+      "index": 2,
+      "scheduled_rel_sec": 2.4874581029132123,
+      "send_rel_sec": 2.487774750999961,
+      "lag_ms": 0.3166480867484722,
+      "latency_ms": 346.23199900033796,
+      "server_delta_ms": null,
+      "cold_flag": false,
+      "controller_req_class": "cold_wait",
+      "error": null
+    },
+    {
+      "index": 3,
+      "scheduled_rel_sec": 4.381029902456322,
+      "send_rel_sec": 4.381486402000519,
+      "lag_ms": 0.45649954419690886,
+      "latency_ms": 657.8685979993679,
+      "server_delta_ms": null,
+      "cold_flag": false,
+      "controller_req_class": "cold",
+      "error": null
+    },
+    {
+      "index": 4,
+      "scheduled_rel_sec": 4.831036265362448,
+      "send_rel_sec": 4.831198569000662,
+      "lag_ms": 0.16230363821456706,
+      "latency_ms": 207.78606199928618,
+      "server_delta_ms": null,
+      "cold_flag": true,
+      "controller_req_class": "cold_wait",
+      "error": null
+    },
+    {
+      "index": 5,
+      "scheduled_rel_sec": 5.556691861317115,
+      "send_rel_sec": 5.556807523999851,
+      "lag_ms": 0.11566268273544011,
+      "latency_ms": 2.5324260004708776,
+      "server_delta_ms": null,
+      "cold_flag": false,
+      "controller_req_class": "warm",
+      "error": null
+    },
+    {
+      "index": 6,
+      "scheduled_rel_sec": 7.610606878813485,
+      "send_rel_sec": 7.610771895000653,
+      "lag_ms": 0.16501618716802113,
+      "latency_ms": 655.208634999326,
+      "server_delta_ms": null,
+      "cold_flag": true,
+      "controller_req_class": "cold",
+      "error": null
+    },
+    {
+      "index": 7,
+      "scheduled_rel_sec": 8.099958368093485,
+      "send_rel_sec": 8.100081159000183,
+      "lag_ms": 0.12279090669764514,
+      "latency_ms": 165.94122999958927,
+      "server_delta_ms": null,
+      "cold_flag": false,
+      "controller_req_class": "cold_wait",
+      "error": null
+    },
+    {
+      "index": 8,
+      "scheduled_rel_sec": 10.468524683934278,
+      "send_rel_sec": 10.469035522000013,
+      "lag_ms": 0.5108380657343758,
+      "latency_ms": 661.8592390004778,
+      "server_delta_ms": null,
+      "cold_flag": false,
+      "controller_req_class": "cold",
+      "error": null
+    },
+    {
+      "index": 9,
+      "scheduled_rel_sec": 11.071230356582069,
+      "send_rel_sec": 11.071342013000503,
+      "lag_ms": 0.11165641843469132,
+      "latency_ms": 59.59132999942085,
+      "server_delta_ms": null,
+      "cold_flag": true,
+      "controller_req_class": "cold_wait",
+      "error": null
+    },
+    {
+      "index": 10,
+      "scheduled_rel_sec": 12.99097238606116,
+      "send_rel_sec": 12.991155120000258,
+      "lag_ms": 0.18273393909851166,
+      "latency_ms": 658.9807829996062,
+      "server_delta_ms": null,
+      "cold_flag": true,
+      "controller_req_class": "cold",
+      "error": null
+    },
+    {
+      "index": 11,
+      "scheduled_rel_sec": 14.722245716376742,
+      "send_rel_sec": 14.722678385000108,
+      "lag_ms": 0.43266862336643896,
+      "latency_ms": 665.3364300000248,
+      "server_delta_ms": null,
+      "cold_flag": true,
+      "controller_req_class": "cold",
+      "error": null
+    },
+    {
+      "index": 12,
+      "scheduled_rel_sec": 15.340294879799293,
+      "send_rel_sec": 15.340396544000214,
+      "lag_ms": 0.10166420092083683,
+      "latency_ms": 47.80418199970882,
+      "server_delta_ms": null,
+      "cold_flag": false,
+      "controller_req_class": "cold_wait",
+      "error": null
+    },
+    {
+      "index": 13,
+      "scheduled_rel_sec": 15.477444257755158,
+      "send_rel_sec": 15.47870389200034,
+      "lag_ms": 1.2596342451818288,
+      "latency_ms": 2.952218000245921,
+      "server_delta_ms": null,
+      "cold_flag": false,
+      "controller_req_class": "warm",
+      "error": null
+    },
+    {
+      "index": 14,
+      "scheduled_rel_sec": 16.98439122094998,
+      "send_rel_sec": 16.984527784999955,
+      "lag_ms": 0.13656404997419713,
+      "latency_ms": 666.6140820007058,
+      "server_delta_ms": null,
+      "cold_flag": true,
+      "controller_req_class": "cold",
+      "error": null
+    },
+    {
+      "index": 15,
+      "scheduled_rel_sec": 18.06606083827972,
+      "send_rel_sec": 18.066339422000055,
+      "lag_ms": 0.2785837203340691,
+      "latency_ms": 654.2916950002109,
+      "server_delta_ms": null,
+      "cold_flag": false,
+      "controller_req_class": "cold",
+      "error": null
+    },
+    {
+      "index": 16,
+      "scheduled_rel_sec": 18.4022939249812,
+      "send_rel_sec": 18.402410056000008,
+      "lag_ms": 0.11613101880669774,
+      "latency_ms": 317.659532000107,
+      "server_delta_ms": null,
+      "cold_flag": true,
+      "controller_req_class": "cold_wait",
+      "error": null
+    },
+    {
+      "index": 17,
+      "scheduled_rel_sec": 18.441035946949416,
+      "send_rel_sec": 18.441340393000246,
+      "lag_ms": 0.3044460508299096,
+      "latency_ms": 279.3270129996017,
+      "server_delta_ms": null,
+      "cold_flag": false,
+      "controller_req_class": "cold_wait",
+      "error": null
+    },
+    {
+      "index": 18,
+      "scheduled_rel_sec": 18.837585643266475,
+      "send_rel_sec": 18.83779101500022,
+      "lag_ms": 0.205371733745352,
+      "latency_ms": 2.8858719997515436,
+      "server_delta_ms": null,
+      "cold_flag": false,
+      "controller_req_class": "warm",
+      "error": null
+    },
+    {
+      "index": 19,
+      "scheduled_rel_sec": 19.504560997158563,
+      "send_rel_sec": 19.50525097300033,
+      "lag_ms": 0.6899758417659996,
+      "latency_ms": 3.0831340000077034,
+      "server_delta_ms": null,
+      "cold_flag": false,
+      "controller_req_class": "warm",
+      "error": null
+    }
+  ]
+}

@@ -9,8 +9,15 @@ import urllib.parse
 import urllib.request
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
+from criu_backend import NAME as SNAP_NAME, CKPT as SNAP_CKPT
+from policy import EwmaGapPredictor, Prewarmer
+
 IMAGE_NAME = "serverless-sim:latest"
 CONTAINER_PREFIX = "serverless-ctrl-"
+
+SNAP_PORT = 8080
+LEAD_BOOT = 0.72      # s, about p95 of measured cold boot
+LEAD_RESTORE = 0.56   # s, about p95 of measured restore
 
 
 def check_image(image_name: str = IMAGE_NAME):
@@ -46,30 +53,57 @@ class ContainerManager:
         image_name: str = IMAGE_NAME,
         log_file: str = "controller_events.json",
         use_reaper: bool = True,
+        use_restore: bool = False,
+        use_prewarm: bool = False,
+        alpha: float = 0.3,
+        grace: float = 0.5,
+        margin: float = 0.1,
     ):
         self.t_prime = t_prime
         self.image_name = image_name
         self.log_file = log_file
         self.use_reaper = use_reaper
+        self.use_restore = use_restore
+        self.grace = grace
         self.lock = threading.Lock()
 
         # Lifecycle state
         self.state = "NONE"  # NONE, BOOTING, READY
         self.last_arrival = 0.0
+        self.hold_until = 0.0            # prewarm: do not expire before this time
         self.endpoint = None
         self.boot_event = threading.Event()
         self.current_container_name = None
+        self.container_origin = None     # "request" or "prewarm"
+        self.container_served = False    # has a request used this container yet?
         self.run_counter = 0
+
+        # Restore mode: single snapshot container, serialised kill/restore
+        self.docker_lock = threading.Lock()
+        self.snap_alive = False
+        self.restore_count = 0
 
         # Structured event log
         self.event_log = []
 
-        # Run startup check & cleanup
         check_image(self.image_name)
         cleanup_leftovers(CONTAINER_PREFIX)
+        if use_restore:
+            r = subprocess.run(["docker", "checkpoint", "ls", SNAP_NAME],
+                               capture_output=True, text=True)
+            if SNAP_CKPT not in r.stdout:
+                raise SystemExit("No snapshot found: run `python criu_backend.py snapshot` first.")
+            subprocess.run(["docker", "kill", SNAP_NAME], capture_output=True)
 
-        # Register exit handler for synchronous teardown and log flush
         atexit.register(self.shutdown)
+
+        # Prewarm policy
+        self.predictor = None
+        if use_prewarm:
+            self.predictor = EwmaGapPredictor(alpha)
+            lead = LEAD_RESTORE if use_restore else LEAD_BOOT
+            self.prewarmer = Prewarmer(self.predictor, self.prewarm, lead, margin)
+            self.prewarmer.start()
 
         # Optional proactive background reaper thread
         if self.use_reaper:
@@ -92,47 +126,120 @@ class ContainerManager:
         """Synchronously cleans up container state and flushes logs at exit."""
         if hasattr(self, "stop_reaper"):
             self.stop_reaper.set()
+        if hasattr(self, "prewarmer"):
+            self.prewarmer.stop_evt.set()
 
         with self.lock:
             active_container = self.current_container_name
             self.current_container_name = None
 
-        if active_container:
+        if self.use_restore:
+            subprocess.run(["docker", "kill", SNAP_NAME], capture_output=True)
+        elif active_container:
             subprocess.run(["docker", "rm", "-f", active_container], capture_output=True)
 
         if self.log_file:
             with open(self.log_file, "w", encoding="utf-8") as f:
                 json.dump(self.event_log, f, indent=2)
 
+    # ---------- helpers (the first three expect self.lock to be held) ----------
+
+    def _expired(self, now):
+        return self.state == "READY" and now > max(self.last_arrival + self.t_prime,
+                                                   self.hold_until)
+
+    def _note_expiry(self, name, how):
+        self.log_event(how, container_name=name)
+        if self.container_origin == "prewarm" and not self.container_served:
+            self.log_event("prewarm_wasted", container_name=name)
+
+    def _launch(self, origin):
+        self.run_counter += 1
+        if self.use_restore:
+            name, port = SNAP_NAME, SNAP_PORT
+        else:
+            name = f"{CONTAINER_PREFIX}{self.run_counter}-{int(time.monotonic())}"
+            port = get_free_port()
+        self.current_container_name = name
+        self.state = "BOOTING"
+        self.endpoint = None
+        self.boot_event.clear()
+        self.hold_until = 0.0
+        self.container_origin = origin
+        self.container_served = (origin == "request")
+        threading.Thread(target=self.start_container, args=(name, port), daemon=True).start()
+
+    def _kill_snap(self, restores_at_expiry):
+        """Reaper path in restore mode. Skips if a newer restore has already started."""
+        with self.docker_lock:
+            if self.restore_count != restores_at_expiry:
+                return
+            if self.snap_alive:
+                subprocess.run(["docker", "kill", SNAP_NAME], capture_output=True)
+                self.snap_alive = False
+
+    def prewarm(self, t_pred):
+        """Called by the Prewarmer thread shortly before the predicted arrival."""
+        with self.lock:
+            if self.state == "BOOTING":
+                return
+            hold = t_pred + self.grace
+            if self.state == "READY":    # still up: keep it alive until the arrival
+                if hold > self.hold_until:
+                    self.hold_until = hold
+                    self.log_event("prewarm_hold")
+                return
+            self._launch("prewarm")      # down: start it ahead of the predicted arrival
+            self.hold_until = hold
+            self.log_event("prewarm_start")
+
     def _reaper_loop(self):
         """Background thread checking every 20 ms to reclaim expired containers eagerly."""
         while not self.stop_reaper.is_set():
             time.sleep(0.02)
-            to_remove = None
+            to_remove, n = None, None
             with self.lock:
-                if self.state == "READY":
-                    if (time.monotonic() - self.last_arrival) > self.t_prime:
-                        to_remove = self.current_container_name
-                        self.state = "NONE"
-                        self.endpoint = None
-                        self.current_container_name = None
-                        self.log_event("reaper_expired", container_name=to_remove)
+                if self._expired(time.monotonic()):
+                    to_remove = self.current_container_name
+                    n = self.restore_count
+                    self.state = "NONE"
+                    self.endpoint = None
+                    self.current_container_name = None
+                    self._note_expiry(to_remove, "reaper_expired")
 
             if to_remove:
-                subprocess.run(["docker", "rm", "-f", to_remove], capture_output=True)
+                if self.use_restore:
+                    self._kill_snap(n)
+                else:
+                    subprocess.run(["docker", "rm", "-f", to_remove], capture_output=True)
 
     def start_container(self, container_name: str, port: int):
-        """Container boot sequence with health check and error handling."""
-        self.log_event("boot_start", container_name=container_name)
+        """Boot (docker run) or restore (docker start --checkpoint), then poll /health."""
+        self.log_event("restore_start" if self.use_restore else "boot_start",
+                       container_name=container_name)
         ready_flag = False
         try:
-            cmd = [
-                "docker", "run", "-d", "--rm",
-                "--name", container_name,
-                "-p", f"{port}:8080",
-                self.image_name,
-            ]
-            res = subprocess.run(cmd, capture_output=True, text=True)
+            if self.use_restore:
+                port = SNAP_PORT
+                with self.docker_lock:
+                    if self.snap_alive:                  # stale container still running
+                        subprocess.run(["docker", "kill", SNAP_NAME], capture_output=True)
+                        self.snap_alive = False
+                    self.restore_count += 1
+                    res = subprocess.run(
+                        ["docker", "start", "--checkpoint", SNAP_CKPT, SNAP_NAME],
+                        capture_output=True, text=True,
+                    )
+                    if res.returncode == 0:
+                        self.snap_alive = True
+            else:
+                res = subprocess.run(
+                    ["docker", "run", "-d", "--rm",
+                     "--name", container_name,
+                     "-p", f"{port}:8080",
+                     self.image_name],
+                    capture_output=True, text=True,
+                )
             if res.returncode != 0:
                 with self.lock:
                     self.state = "NONE"
@@ -143,7 +250,7 @@ class ContainerManager:
             health_endpoint = f"http://127.0.0.1:{port}/health"
             deadline = time.monotonic() + 30.0
 
-            # Poll /health every 2 ms to prevent consuming application / cold status flags
+            # Poll /health every 2 ms so the app's own cold flag is not consumed
             while time.monotonic() < deadline:
                 try:
                     req = urllib.request.Request(health_endpoint, method="GET")
@@ -170,59 +277,53 @@ class ContainerManager:
                 self.endpoint = None
                 self.log_event("boot_exception", container_name=container_name)
         finally:
-            # Guarantee boot event release under all execution branches
             self.boot_event.set()
 
     def handle_request(self) -> tuple[str, str]:
-        """Classifies incoming requests under lock based on arrival delta and container state."""
+        """Classifies an incoming request under lock from arrival time and container state."""
         now = time.monotonic()
+        if self.predictor:
+            self.predictor.observe(now)
 
         with self.lock:
-            # Expiry check ONLY applies when state == "READY"
-            is_expired = (self.state == "READY") and ((now - self.last_arrival) > self.t_prime)
+            is_expired = self._expired(now)
 
             if self.state == "NONE" or is_expired:
-                request_class = "cold"
+                request_class = "cold_restore" if self.use_restore else "cold"
                 old_container = self.current_container_name if is_expired else None
-
                 if is_expired:
-                    self.log_event("container_expired", container_name=old_container)
-
-                self.run_counter += 1
-                self.current_container_name = f"{CONTAINER_PREFIX}{self.run_counter}-{int(now)}"
-                port = get_free_port()
-
-                self.state = "BOOTING"
-                self.endpoint = None  # Clear endpoint until boot completes successfully
-                self.boot_event.clear()
+                    self._note_expiry(old_container, "container_expired")
                 self.last_arrival = now
+                self._launch("request")
                 self.log_event("request_arrival", req_class=request_class)
 
-                # Asynchronously clean up old container if not already removed by reaper
-                if old_container:
+                if old_container and not self.use_restore:
                     threading.Thread(
-                        target=lambda c: subprocess.run(["docker", "rm", "-f", c], capture_output=True),
+                        target=lambda c: subprocess.run(["docker", "rm", "-f", c],
+                                                        capture_output=True),
                         args=(old_container,),
                         daemon=True,
                     ).start()
 
-                threading.Thread(
-                    target=self.start_container,
-                    args=(self.current_container_name, port),
-                    daemon=True,
-                ).start()
-
             elif self.state == "BOOTING":
-                request_class = "cold_wait"
+                if self.container_origin == "prewarm" and not self.container_served:
+                    request_class = "late_prewarm"       # arrived while the prewarm was booting
+                    self.container_served = True
+                else:
+                    request_class = "cold_wait"
                 self.last_arrival = now
                 self.log_event("request_arrival", req_class=request_class)
 
             else:  # READY
-                request_class = "warm"
+                if self.container_origin == "prewarm" and not self.container_served:
+                    request_class = "prewarm_hit"
+                    self.container_served = True
+                else:
+                    request_class = "warm"
                 self.last_arrival = now
                 self.log_event("request_arrival", req_class=request_class)
 
-        if request_class in ("cold", "cold_wait"):
+        if request_class not in ("warm", "prewarm_hit"):
             self.boot_event.wait()
 
         with self.lock:
@@ -269,10 +370,15 @@ class ControllerRequestHandler(BaseHTTPRequestHandler):
         pass
 
 
-def run_controller(port: int, T: float, k: float, log_file: str, use_reaper: bool):
+def run_controller(port, T, k, log_file, use_reaper,
+                   restore=False, prewarm=False, alpha=0.3, grace=0.5, margin=0.1):
     t_prime = T / k
-    cm = ContainerManager(t_prime=t_prime, log_file=log_file, use_reaper=use_reaper)
-    cm.event_log.append({"event": "config", "T": T, "k": k, "t_prime": t_prime})
+    cm = ContainerManager(t_prime=t_prime, log_file=log_file, use_reaper=use_reaper,
+                          use_restore=restore, use_prewarm=prewarm,
+                          alpha=alpha, grace=grace, margin=margin)
+    cm.event_log.append({"event": "config", "T": T, "k": k, "t_prime": t_prime,
+                         "restore": restore, "prewarm": prewarm,
+                         "alpha": alpha, "grace": grace, "margin": margin})
 
     class ThreadedHandler(ControllerRequestHandler):
         container_manager = cm
@@ -286,11 +392,17 @@ def run_controller(port: int, T: float, k: float, log_file: str, use_reaper: boo
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Serverless Controller and Container Manager")
-    parser.add_argument("--port", type=int, default=8080, help="Controller listening port")
+    parser.add_argument("--port", type=int, default=9000, help="Controller listening port")
     parser.add_argument("-T", "--idle-timeout", type=float, default=10.0, help="Idle timeout T (seconds)")
     parser.add_argument("-k", "--speedup", type=float, default=1.0, help="Speedup multiplier k")
     parser.add_argument("--log", type=str, default="controller_events.json", help="Controller event log JSON path")
     parser.add_argument("--no-reaper", action="store_true", help="Disable background proactive reaper thread")
+    parser.add_argument("--restore", action="store_true", help="Cold requests restore from the CRIU snapshot")
+    parser.add_argument("--prewarm", action="store_true", help="EWMA predictive pre-warming")
+    parser.add_argument("--alpha", type=float, default=0.3, help="EWMA smoothing factor")
+    parser.add_argument("--grace", type=float, default=0.5, help="Hold a prewarmed container this long past the predicted arrival (s)")
+    parser.add_argument("--margin", type=float, default=0.1, help="Safety margin added to start-up lead time (s)")
     args = parser.parse_args()
 
-    run_controller(args.port, args.idle_timeout, args.speedup, args.log, not args.no_reaper)
+    run_controller(args.port, args.idle_timeout, args.speedup, args.log, not args.no_reaper,
+                   args.restore, args.prewarm, args.alpha, args.grace, args.margin)
