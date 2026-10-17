@@ -4,6 +4,7 @@ import os
 import sys
 
 import numpy as np
+from traces import TRACES
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(BASE, "results")
@@ -115,14 +116,7 @@ def show(rows):
 
 
 if __name__ == "__main__":
-    names = sys.argv[1:]
-    if not names:
-        found = set()
-        for f in os.listdir(OUT):
-            for c in CONDS:
-                if f.endswith(f"_{c}.json"):
-                    found.add(f[: -len(f"_{c}.json")])
-        names = sorted(found)
+    names = sys.argv[1:] or TRACES
     rows = [r for name in names for cond in CONDS if (r := analyze(name, cond))]
     if not rows:
         sys.exit("no results found in " + OUT)

@@ -7,11 +7,7 @@ import numpy as np
 BASE = os.path.dirname(os.path.abspath(__file__))
 TRACES = os.path.join(BASE, "..", "traffic_generators")
 K = 2.0
-FILES = {
-    "poisson_p05": "p05.json",
-    "periodic_p05": "periodic_p05.json",
-    "bursty_p05": "bursty_p05.json",
-}
+from traces import TRACE_FILES as FILES
 
 
 def load(name):

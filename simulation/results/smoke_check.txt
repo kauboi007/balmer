@@ -1,9 +1,9 @@
 n=20 errors=0 classes={'cold': 11, 'cold_wait': 7, 'warm': 2}
 cold fraction (cold + cold_wait) = 0.900 | predicted from trace = 0.650
-lag ms: mean=0.30 max=0.84
-latency cold: median=677.5 ms p95=697.1 ms n=11
-latency cold_wait: median=208.9 ms p95=377.7 ms n=7
-latency warm: median=2.6 ms p95=2.8 ms n=2
+lag ms: mean=0.43 max=0.77
+latency cold: median=660.9 ms p95=673.8 ms n=11
+latency cold_wait: median=206.4 ms p95=347.1 ms n=7
+latency warm: median=2.8 ms p95=3.0 ms n=2
 t_prime controller=0.5 replayer=0.5
 containers booted=11 function cold flags=11
 PASS

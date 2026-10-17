@@ -1,0 +1,1 @@
+sudo bash -c 'while true; do find /tmp -maxdepth 1 -name "ctrd-checkpoint*" -mmin +1 -exec rm -rf {} +; sleep 10; done'

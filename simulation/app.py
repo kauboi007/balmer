@@ -1,8 +1,6 @@
 import time
 
-# Process clock starts here: the first line that runs once the Python
-# interpreter itself has booted. Interpreter boot time is NOT included.
-#app.py
+
 PROCESS_START_TIME = time.time()
 _T_INIT_START = time.perf_counter()
 
@@ -10,17 +8,15 @@ import os
 import threading
 
 import numpy as np
-import pandas as pd  # unused on purpose: adds realistic import cost to the cold start. Your call to keep or remove.
+import pandas as pd  
 from flask import Flask, jsonify
 
-# Heavy in-memory state, so a CRIU snapshot later has real RAM to preserve.
 PRECOMPUTED_DATA = np.ones((1000, 1000)) * 42.0
 PRECOMPUTED_CHECKSUM = float(np.sum(PRECOMPUTED_DATA))
 
 app = Flask(__name__)
 
-# INIT_DURATION_MS = first line of this file -> Flask app object built.
-# It covers numpy, pandas and flask imports plus the precompute above.
+
 INIT_DURATION_MS = (time.perf_counter() - _T_INIT_START) * 1000.0
 
 _cold_lock = threading.Lock()
@@ -28,7 +24,6 @@ IS_COLD = True
 
 
 def current_rss_mb() -> float:
-    #Current (not peak) resident memory of this process, from /proc
     with open("/proc/self/status") as f:
         for line in f:
             if line.startswith("VmRSS:"):
@@ -44,8 +39,7 @@ def invoke():
     global IS_COLD
     now = time.time()
 
-    # Read-and-flip must be atomic, or two simultaneous first requests
-    # could both see IS_COLD == True.
+  
     with _cold_lock:
         was_cold = IS_COLD
         IS_COLD = False
