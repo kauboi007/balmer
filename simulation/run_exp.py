@@ -27,6 +27,7 @@ CONDITIONS = {
     "restore": ["--restore"],
     "prewarm": ["--prewarm"],
     "combined": ["--prewarm", "--restore"],
+    "psp": ["--psp"],
 }
 
 
@@ -41,14 +42,14 @@ def wait_for_port(port, timeout=20.0):
     return False
 
 
-def run_one(name, trace_file, n, k, cond):
+def run_one(name, trace_file, n, k, cond,extra=()):
     trace = os.path.join(TRACES, trace_file)
     T = json.load(open(trace, encoding="utf-8"))["metadata"]["t"]
     log = os.path.join(OUT, f"{name}_{cond}.json")
     events = os.path.join(OUT, f"{name}_{cond}_events.json")
     ctrl = subprocess.Popen(
         [sys.executable, os.path.join(BASE, "controller.py"), "--port", str(PORT),
-         "-T", str(T), "-k", str(k), "--log", events, *CONDITIONS[cond]],
+         "-T", str(T), "-k", str(k), "--log", events, *CONDITIONS[cond],*extra],
         cwd=BASE)
     try:
         if not wait_for_port(PORT):
@@ -82,14 +83,20 @@ if __name__ == "__main__":
     ap.add_argument("names", nargs="*", help="trace names to run (default: all six)")
     ap.add_argument("--cond", choices=list(CONDITIONS), default="keepalive")
     ap.add_argument("--smoke", action="store_true")
+    ap.add_argument("--psp-hi", type=float)
+    ap.add_argument("--psp-lo", type=float)
     a = ap.parse_args()
-
+    extra=[]
+    if a.cond == "psp":
+        if a.psp_hi is None or a.psp_lo is None:
+            ap.error("--cond psp needs --psp-hi and --psp-lo")
+        extra = ["--psp-hi", str(a.psp_hi), "--psp-lo", str(a.psp_lo)]
     os.makedirs(OUT, exist_ok=True)
-    if a.cond in ("restore", "combined"):
+    if a.cond in ("restore", "combined","psp"):
         make_snapshot()                # once per batch; keep port 8080 free
 
     if a.smoke:
-        run_one("smoke", RUNS[0][1], 20, 10.0, a.cond)
+        run_one("smoke", RUNS[0][1], 20, 10.0, a.cond,extra)
     else:
         runs = [r for r in RUNS if not a.names or r[0] in a.names]
         total = 0.0
@@ -98,5 +105,5 @@ if __name__ == "__main__":
             total += tr[-1] / K
         print(f"estimated total: {total / 60:.0f} min")
         for name, fname in runs:
-            run_one(name, fname, 100000, K, a.cond)
+            run_one(name, fname, 100000, K, a.cond,extra)
             time.sleep(2)

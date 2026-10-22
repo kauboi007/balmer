@@ -4,7 +4,7 @@ import sys
 
 import numpy as np
 
-CLS = {"keepalive": "cold", "restore": "cold_restore", "prewarm": "cold", "combined": "cold_restore"}
+CLS = {"keepalive": "cold", "restore": "cold_restore", "prewarm": "cold", "combined": "cold_restore","psp":"cold_restore"}
 NAMES = sys.argv[1:] or ["poisson_p09", "periodic_p09", "bursty_p03"]
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "results")
 

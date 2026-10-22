@@ -7,4 +7,4 @@ TRACE_FILES = {
     "poisson_p09": "p09.json",
 }
 TRACES = list(TRACE_FILES)
-CONDS = ["keepalive", "restore", "prewarm", "combined"]
+CONDS = ["keepalive", "restore", "prewarm", "combined","psp"]

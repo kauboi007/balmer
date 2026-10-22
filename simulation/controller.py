@@ -8,6 +8,7 @@ import time
 import urllib.parse
 import urllib.request
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from policy import EwmaGapPredictor, Prewarmer, psp_tier
 
 from criu_backend import NAME as SNAP_NAME, CKPT as SNAP_CKPT
 from policy import EwmaGapPredictor, Prewarmer
@@ -58,7 +59,17 @@ class ContainerManager:
         alpha: float = 0.3,
         grace: float = 0.5,
         margin: float = 0.1,
-    ):
+        use_psp: bool = False,
+        psp_hi: float = None,
+        psp_lo: float = None,
+    ):  
+        if use_psp:
+            if psp_hi is None or psp_lo is None:
+                raise SystemExit("--psp needs --psp-hi and --psp-lo (run calibrate_psp.py first)")
+            use_restore = use_prewarm = True      # PSP always restores and always has a predictor
+        self.use_psp = use_psp
+        self.psp_hi = psp_hi
+        self.psp_lo = psp_lo
         self.t_prime = t_prime
         self.image_name = image_name
         self.log_file = log_file
@@ -168,7 +179,7 @@ class ContainerManager:
         self.container_origin = origin
         self.container_served = (origin == "request")
         threading.Thread(target=self.start_container, args=(name, port), daemon=True).start()
-
+    
     def _kill_snap(self, restores_at_expiry):
         """Reaper path in restore mode. Skips if a newer restore has already started."""
         with self.docker_lock:
@@ -180,16 +191,26 @@ class ContainerManager:
 
     def prewarm(self, t_pred):
         """Called by the Prewarmer thread shortly before the predicted arrival."""
+        tier = "high"
+        if self.use_psp:
+            rel, n = self.predictor.rel_error()
+            tier = psp_tier(rel, n, self.psp_hi, self.psp_lo)
         with self.lock:
+            if self.use_psp:
+                self.log_event("psp_tier", req_class=tier)
+                if tier == "low":
+                    return                       # not confident: spend nothing
             if self.state == "BOOTING":
                 return
             hold = t_pred + self.grace
-            if self.state == "READY":    # still up: keep it alive until the arrival
+            if self.state == "READY":            # still up: keep it alive until the arrival
                 if hold > self.hold_until:
                     self.hold_until = hold
                     self.log_event("prewarm_hold")
                 return
-            self._launch("prewarm")      # down: start it ahead of the predicted arrival
+            if tier != "high":                   # medium never starts a container speculatively
+                return
+            self._launch("prewarm")
             self.hold_until = hold
             self.log_event("prewarm_start")
 
@@ -371,23 +392,17 @@ class ControllerRequestHandler(BaseHTTPRequestHandler):
 
 
 def run_controller(port, T, k, log_file, use_reaper,
-                   restore=False, prewarm=False, alpha=0.3, grace=0.5, margin=0.1):
+                   restore=False, prewarm=False, alpha=0.3, grace=0.5, margin=0.1,
+                   psp=False, psp_hi=None, psp_lo=None):
     t_prime = T / k
     cm = ContainerManager(t_prime=t_prime, log_file=log_file, use_reaper=use_reaper,
                           use_restore=restore, use_prewarm=prewarm,
-                          alpha=alpha, grace=grace, margin=margin)
+                          alpha=alpha, grace=grace, margin=margin,
+                          use_psp=psp, psp_hi=psp_hi, psp_lo=psp_lo)
     cm.event_log.append({"event": "config", "T": T, "k": k, "t_prime": t_prime,
-                         "restore": restore, "prewarm": prewarm,
+                         "restore": restore, "prewarm": prewarm, "psp": psp,
+                         "psp_hi": psp_hi, "psp_lo": psp_lo,
                          "alpha": alpha, "grace": grace, "margin": margin})
-
-    class ThreadedHandler(ControllerRequestHandler):
-        container_manager = cm
-
-    server = ThreadingHTTPServer(("127.0.0.1", port), ThreadedHandler)
-    try:
-        server.serve_forever()
-    except KeyboardInterrupt:
-        server.server_close()
 
 
 if __name__ == "__main__":
@@ -402,7 +417,11 @@ if __name__ == "__main__":
     parser.add_argument("--alpha", type=float, default=0.3, help="EWMA smoothing factor")
     parser.add_argument("--grace", type=float, default=0.5, help="Hold a prewarmed container this long past the predicted arrival (s)")
     parser.add_argument("--margin", type=float, default=0.1, help="Safety margin added to start-up lead time (s)")
+    parser.add_argument("--psp", action="store_true", help="Confidence-gated policy (implies restore and prewarm)")
+    parser.add_argument("--psp-hi", type=float, default=None, help="rel. error at or below this = high confidence")
+    parser.add_argument("--psp-lo", type=float, default=None, help="rel. error at or below this = medium confidence")
     args = parser.parse_args()
 
     run_controller(args.port, args.idle_timeout, args.speedup, args.log, not args.no_reaper,
-                   args.restore, args.prewarm, args.alpha, args.grace, args.margin)
+                   args.restore, args.prewarm, args.alpha, args.grace, args.margin,
+                   args.psp, args.psp_hi, args.psp_lo)

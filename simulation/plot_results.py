@@ -13,9 +13,9 @@ from traces import CONDS, TRACES
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(BASE, "results")
-COLORS = {"keepalive": "#888888", "restore": "#1f77b4", "prewarm": "#ff7f0e", "combined": "#2ca02c"}
-MARKERS = {"keepalive": "o", "restore": "s", "prewarm": "^", "combined": "D"}
-SIZES = {"keepalive": 150, "restore": 60, "prewarm": 90, "combined": 90}
+COLORS = {"keepalive": "#888888", "restore": "#1f77b4", "prewarm": "#ff7f0e", "combined": "#2ca02c","psp": "#d62728"}
+MARKERS = {"keepalive": "o", "restore": "s", "prewarm": "^", "combined": "D","psp": "P"}
+SIZES = {"keepalive": 150, "restore": 60, "prewarm": 90, "combined": 90,"psp": 90}
 
 
 def read_rows():
@@ -85,7 +85,7 @@ def main():
 
     # Figure 2: mean latency, labelled with up time
     fig2, ax2 = plt.subplots(figsize=(max(9, 2.4 * n), 5))
-    w = 0.2
+    w = 0.16
     seen = set()
     for j, t in enumerate(traces):
         for i, cond in enumerate(CONDS):
@@ -94,7 +94,7 @@ def main():
                 continue
             label = cond if cond not in seen else None
             seen.add(cond)
-            xpos = j + (i - 1.5) * w
+            xpos = j + (i - 2) * w
             h = float(r["mean_ms"])
             ax2.bar(xpos, h, w, color=COLORS[cond], label=label)
             ax2.text(xpos, h + 4, f"{100 * float(r['up_frac']):.0f}%", ha="center", fontsize=8)

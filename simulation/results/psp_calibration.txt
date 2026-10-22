@@ -1,0 +1,9 @@
+relative forecast error per arrival, pooled over seeds (lower = more predictable)
+poisson_p05   n= 9891  p10=0.53  p50=0.80  p90=1.21
+periodic_p05  n= 2450  p10=0.15  p50=0.23  p90=0.34
+poisson_p09   n= 1456  p10=0.52  p50=0.81  p90=1.21
+periodic_p09  n= 2450  p10=0.11  p50=0.17  p90=0.26
+bursty_p03    n= 2450  p10=0.79  p50=1.45  p90=2.66
+bursty_p05    n= 2450  p10=0.57  p50=0.96  p90=2.07
+
+low=0.26 high=0.9

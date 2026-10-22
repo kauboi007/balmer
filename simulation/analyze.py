@@ -8,7 +8,7 @@ from traces import TRACES
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(BASE, "results")
-CONDS = ["keepalive", "restore", "prewarm", "combined"]
+CONDS = ["keepalive", "restore", "prewarm", "combined","psp"]
 FAST = ("warm", "prewarm_hit")      # requests that did not wait for any container
 
 
