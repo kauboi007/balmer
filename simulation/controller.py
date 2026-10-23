@@ -8,10 +8,9 @@ import time
 import urllib.parse
 import urllib.request
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
-from policy import EwmaGapPredictor, Prewarmer, psp_tier
 
-from criu_backend import NAME as SNAP_NAME, CKPT as SNAP_CKPT
-from policy import EwmaGapPredictor, Prewarmer
+from criu_backend import CKPT as SNAP_CKPT, NAME as SNAP_NAME
+from policy import EwmaGapPredictor, Prewarmer, psp_tier
 
 IMAGE_NAME = "serverless-sim:latest"
 CONTAINER_PREFIX = "serverless-ctrl-"
@@ -153,8 +152,6 @@ class ContainerManager:
             with open(self.log_file, "w", encoding="utf-8") as f:
                 json.dump(self.event_log, f, indent=2)
 
-    # ---------- helpers (the first three expect self.lock to be held) ----------
-
     def _expired(self, now):
         return self.state == "READY" and now > max(self.last_arrival + self.t_prime,
                                                    self.hold_until)
@@ -271,7 +268,6 @@ class ContainerManager:
             health_endpoint = f"http://127.0.0.1:{port}/health"
             deadline = time.monotonic() + 30.0
 
-            # Poll /health every 2 ms so the app's own cold flag is not consumed
             while time.monotonic() < deadline:
                 try:
                     req = urllib.request.Request(health_endpoint, method="GET")
@@ -403,6 +399,17 @@ def run_controller(port, T, k, log_file, use_reaper,
                          "restore": restore, "prewarm": prewarm, "psp": psp,
                          "psp_hi": psp_hi, "psp_lo": psp_lo,
                          "alpha": alpha, "grace": grace, "margin": margin})
+
+    class Handler(ControllerRequestHandler):
+        container_manager = cm
+
+    server = ThreadingHTTPServer(("127.0.0.1", port), Handler)
+    try:
+        server.serve_forever()
+    except KeyboardInterrupt:
+        pass
+    finally:
+        server.server_close()
 
 
 if __name__ == "__main__":

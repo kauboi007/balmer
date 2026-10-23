@@ -50,11 +50,16 @@ def psp_tier(rel_err, n_gaps, hi, lo, min_gaps=5):
     """Lower relative error means higher confidence."""
     if rel_err is None or n_gaps < min_gaps:
         return "low"
-    if rel_err <= hi:
+
+    t_high = min(hi, lo)
+    t_med = max(hi, lo)
+
+    if rel_err <= t_high:
         return "high"
-    if rel_err <= lo:
+    if rel_err <= t_med:
         return "medium"
     return "low"
+
 
 class Prewarmer(threading.Thread):
     """Fires prewarm_fn(t_pred) once per arrival, when 'now' reaches

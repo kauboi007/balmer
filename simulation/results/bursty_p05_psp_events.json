@@ -1,0 +1,5504 @@
+[
+  {
+    "event": "config",
+    "T": 5.0,
+    "k": 2.0,
+    "t_prime": 2.5,
+    "restore": false,
+    "prewarm": false,
+    "psp": true,
+    "psp_hi": 0.26,
+    "psp_lo": 0.65,
+    "alpha": 0.3,
+    "grace": 0.5,
+    "margin": 0.1
+  },
+  {
+    "timestamp": 1792757397.481622,
+    "monotonic": 13246.727493482,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757397.48166,
+    "monotonic": 13246.727531497,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757398.017051,
+    "monotonic": 13247.262922743,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757399.988529,
+    "monotonic": 13249.234400027,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757405.7684784,
+    "monotonic": 13255.014349691,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757405.768518,
+    "monotonic": 13255.014389224,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757406.27636,
+    "monotonic": 13255.522231205,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_wait"
+  },
+  {
+    "timestamp": 1792757406.300992,
+    "monotonic": 13255.546863583,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757407.0891192,
+    "monotonic": 13256.334990322,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757409.5940957,
+    "monotonic": 13258.839966848,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757410.846598,
+    "monotonic": 13260.092469031,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757420.86579,
+    "monotonic": 13270.111661256,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757420.8659766,
+    "monotonic": 13270.11184794,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757421.3857722,
+    "monotonic": 13270.631643779,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757421.656015,
+    "monotonic": 13270.901886037,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757423.2284193,
+    "monotonic": 13272.474290461,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757423.3846107,
+    "monotonic": 13272.630481824,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757424.093966,
+    "monotonic": 13273.339837322,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757425.7293344,
+    "monotonic": 13274.975205554,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757426.6045928,
+    "monotonic": 13275.850464079,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757428.725836,
+    "monotonic": 13277.97170729,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757428.725872,
+    "monotonic": 13277.971743505,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757429.2324107,
+    "monotonic": 13278.478282053,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757431.0639017,
+    "monotonic": 13280.30977298,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757431.2423744,
+    "monotonic": 13280.488245657,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757432.0173552,
+    "monotonic": 13281.263226661,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757432.0174885,
+    "monotonic": 13281.263359779,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757432.5401013,
+    "monotonic": 13281.785972732,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757434.4479487,
+    "monotonic": 13283.693819931,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757434.5195098,
+    "monotonic": 13283.765381036,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757440.0394924,
+    "monotonic": 13289.285363591,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757440.0395517,
+    "monotonic": 13289.285423216,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757440.5499759,
+    "monotonic": 13289.795847259,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757442.5430825,
+    "monotonic": 13291.7889537,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757443.9459863,
+    "monotonic": 13293.191857464,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757449.6779177,
+    "monotonic": 13298.923789154,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757449.6779723,
+    "monotonic": 13298.923843584,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757450.1831357,
+    "monotonic": 13299.429007267,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757452.1942513,
+    "monotonic": 13301.440122428,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757455.109543,
+    "monotonic": 13304.355414406,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "medium"
+  },
+  {
+    "timestamp": 1792757460.6411128,
+    "monotonic": 13309.886984228,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757460.6411777,
+    "monotonic": 13309.887048882,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757461.1630998,
+    "monotonic": 13310.408971042,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757463.144727,
+    "monotonic": 13312.390598274,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757463.5197783,
+    "monotonic": 13312.765649762,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757463.5198283,
+    "monotonic": 13312.765699669,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757464.0238364,
+    "monotonic": 13313.269707699,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757466.032574,
+    "monotonic": 13315.278445128,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757469.0162048,
+    "monotonic": 13318.262076063,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757481.7475832,
+    "monotonic": 13330.993454642,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757481.7476382,
+    "monotonic": 13330.993509734,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757482.268204,
+    "monotonic": 13331.514075602,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757484.2673695,
+    "monotonic": 13333.513240631,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757485.7704582,
+    "monotonic": 13335.01632952,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757485.770591,
+    "monotonic": 13335.016462451,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757486.3308005,
+    "monotonic": 13335.576672196,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757487.8353443,
+    "monotonic": 13337.081215709,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757490.3365583,
+    "monotonic": 13339.582429515,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757493.4334822,
+    "monotonic": 13342.679353503,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757514.6761634,
+    "monotonic": 13363.922034681,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757514.676393,
+    "monotonic": 13363.922264262,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757515.1786335,
+    "monotonic": 13364.424505237,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757517.189149,
+    "monotonic": 13366.435020213,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757526.4456415,
+    "monotonic": 13375.69151272,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757528.734991,
+    "monotonic": 13377.980862328,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757528.735032,
+    "monotonic": 13377.980903395,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757529.2588947,
+    "monotonic": 13378.504765996,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757531.2478235,
+    "monotonic": 13380.493694521,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757536.4359787,
+    "monotonic": 13385.681850173,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757536.4360192,
+    "monotonic": 13385.681890505,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757536.9721196,
+    "monotonic": 13386.217990924,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757538.945316,
+    "monotonic": 13388.19118724,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757540.541697,
+    "monotonic": 13389.787568252,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757540.5417342,
+    "monotonic": 13389.787605389,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757541.0584724,
+    "monotonic": 13390.304343811,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757543.0478804,
+    "monotonic": 13392.293751557,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757543.9470513,
+    "monotonic": 13393.192922505,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757543.9470956,
+    "monotonic": 13393.192966934,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757544.4763958,
+    "monotonic": 13393.722266975,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757544.6053147,
+    "monotonic": 13393.85118592,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757545.2407992,
+    "monotonic": 13394.486670324,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757547.7517438,
+    "monotonic": 13396.997614839,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757548.568658,
+    "monotonic": 13397.814529502,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757552.756088,
+    "monotonic": 13402.0019593,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757552.7561753,
+    "monotonic": 13402.002046814,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757553.2708123,
+    "monotonic": 13402.516683557,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757555.271053,
+    "monotonic": 13404.516924151,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757556.904901,
+    "monotonic": 13406.150772353,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757556.9051466,
+    "monotonic": 13406.151018133,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757557.4218514,
+    "monotonic": 13406.667722973,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757559.4077606,
+    "monotonic": 13408.65363178,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757561.0173888,
+    "monotonic": 13410.263259884,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757583.9782722,
+    "monotonic": 13433.2241436,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757583.9783278,
+    "monotonic": 13433.224199225,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757584.4978569,
+    "monotonic": 13433.743728112,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757586.4940386,
+    "monotonic": 13435.739909824,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757593.2124434,
+    "monotonic": 13442.458314865,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757593.2126,
+    "monotonic": 13442.458471269,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757593.7234304,
+    "monotonic": 13442.969301834,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757595.3676317,
+    "monotonic": 13444.613502851,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757597.8767805,
+    "monotonic": 13447.122651764,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757601.046197,
+    "monotonic": 13450.292068467,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757601.046245,
+    "monotonic": 13450.292116388,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757601.5588627,
+    "monotonic": 13450.804734171,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757603.5548418,
+    "monotonic": 13452.800712923,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757607.831392,
+    "monotonic": 13457.077263245,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757611.7284834,
+    "monotonic": 13460.974354658,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757611.7285368,
+    "monotonic": 13460.974408097,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757612.2513535,
+    "monotonic": 13461.497224976,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757614.2433386,
+    "monotonic": 13463.489209613,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757619.4943526,
+    "monotonic": 13468.740223788,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "medium"
+  },
+  {
+    "timestamp": 1792757620.3787603,
+    "monotonic": 13469.624631723,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757620.3788664,
+    "monotonic": 13469.62473774,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757620.525307,
+    "monotonic": 13469.771178162,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_wait"
+  },
+  {
+    "timestamp": 1792757620.8888223,
+    "monotonic": 13470.134693687,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757623.0365288,
+    "monotonic": 13472.2824,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757625.8594506,
+    "monotonic": 13475.105321857,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757627.0301194,
+    "monotonic": 13476.275990816,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757627.030175,
+    "monotonic": 13476.276046247,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757627.5497131,
+    "monotonic": 13476.795584552,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757629.5382476,
+    "monotonic": 13478.784118952,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757631.9299405,
+    "monotonic": 13481.17581182,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757631.9302642,
+    "monotonic": 13481.176135596,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757632.4279168,
+    "monotonic": 13481.673788286,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757634.4352634,
+    "monotonic": 13483.681134819,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757637.047392,
+    "monotonic": 13486.293263182,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "medium"
+  },
+  {
+    "timestamp": 1792757638.0176818,
+    "monotonic": 13487.263553264,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757638.0177186,
+    "monotonic": 13487.263589894,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757638.5356448,
+    "monotonic": 13487.781516098,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757640.5273333,
+    "monotonic": 13489.773204451,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757641.0693839,
+    "monotonic": 13490.315255188,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757641.0694323,
+    "monotonic": 13490.315303758,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757641.5822532,
+    "monotonic": 13490.828124898,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757643.5793464,
+    "monotonic": 13492.825217716,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757645.4395378,
+    "monotonic": 13494.685408909,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "medium"
+  },
+  {
+    "timestamp": 1792757647.563368,
+    "monotonic": 13496.809239555,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757647.5634046,
+    "monotonic": 13496.809276005,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757648.0928242,
+    "monotonic": 13497.338695866,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757650.0673037,
+    "monotonic": 13499.313174778,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757651.618484,
+    "monotonic": 13500.864355188,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757651.6185188,
+    "monotonic": 13500.864390256,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757652.1275616,
+    "monotonic": 13501.373433293,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757654.1189923,
+    "monotonic": 13503.364863573,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757656.0012257,
+    "monotonic": 13505.247096876,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "medium"
+  },
+  {
+    "timestamp": 1792757656.6683478,
+    "monotonic": 13505.914219168,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757656.6683905,
+    "monotonic": 13505.914261678,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757657.193331,
+    "monotonic": 13506.439202202,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757659.1505988,
+    "monotonic": 13508.396469933,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757661.668773,
+    "monotonic": 13510.914644011,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757662.772337,
+    "monotonic": 13512.018208153,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "medium"
+  },
+  {
+    "timestamp": 1792757670.9640028,
+    "monotonic": 13520.209874179,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757670.9640508,
+    "monotonic": 13520.209922097,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757671.4873762,
+    "monotonic": 13520.733247513,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757673.4712617,
+    "monotonic": 13522.717132769,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757676.8458314,
+    "monotonic": 13526.091702656,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "medium"
+  },
+  {
+    "timestamp": 1792757695.5286293,
+    "monotonic": 13544.77450047,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757695.528673,
+    "monotonic": 13544.774544371,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757696.0487525,
+    "monotonic": 13545.294624313,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757698.0287702,
+    "monotonic": 13547.274641527,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757706.8150527,
+    "monotonic": 13556.060924023,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757711.2788196,
+    "monotonic": 13560.524690863,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757711.278862,
+    "monotonic": 13560.524733572,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757711.7834623,
+    "monotonic": 13561.029334059,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757713.7863932,
+    "monotonic": 13563.032264379,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757714.1009254,
+    "monotonic": 13563.34679676,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757714.1009753,
+    "monotonic": 13563.346846801,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757714.3072405,
+    "monotonic": 13563.553111516,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_wait"
+  },
+  {
+    "timestamp": 1792757714.602172,
+    "monotonic": 13563.848043469,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757716.8164952,
+    "monotonic": 13566.062366408,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757720.71767,
+    "monotonic": 13569.963541073,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757727.1212118,
+    "monotonic": 13576.367082943,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757727.1212592,
+    "monotonic": 13576.36713074,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757727.638852,
+    "monotonic": 13576.884723234,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757729.6305287,
+    "monotonic": 13578.876400091,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757734.2850592,
+    "monotonic": 13583.530930819,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757734.285338,
+    "monotonic": 13583.53120922,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757734.7922893,
+    "monotonic": 13584.038160703,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757736.7910645,
+    "monotonic": 13586.036935789,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757736.808391,
+    "monotonic": 13586.054262488,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757736.808405,
+    "monotonic": 13586.05427646,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757737.2399318,
+    "monotonic": 13586.485803172,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_wait"
+  },
+  {
+    "timestamp": 1792757737.3435302,
+    "monotonic": 13586.589401963,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757737.7737534,
+    "monotonic": 13587.01962462,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757737.8185396,
+    "monotonic": 13587.064410717,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757737.9031527,
+    "monotonic": 13587.149023919,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757737.9883742,
+    "monotonic": 13587.234245414,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757738.328528,
+    "monotonic": 13587.574399139,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757738.4013238,
+    "monotonic": 13587.647194999,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757738.450892,
+    "monotonic": 13587.696763199,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757738.5285895,
+    "monotonic": 13587.77446075,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757738.535675,
+    "monotonic": 13587.781546304,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757738.628299,
+    "monotonic": 13587.874170186,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757738.6292956,
+    "monotonic": 13587.875166688,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757738.764344,
+    "monotonic": 13588.01021526,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757738.7655425,
+    "monotonic": 13588.011413699,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757741.264436,
+    "monotonic": 13590.510307193,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757748.0735397,
+    "monotonic": 13597.319411001,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757748.0737357,
+    "monotonic": 13597.319606987,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757748.5944953,
+    "monotonic": 13597.840366909,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757750.4314816,
+    "monotonic": 13599.677352885,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757750.5806835,
+    "monotonic": 13599.826554718,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757755.2168255,
+    "monotonic": 13604.462696956,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757755.2169669,
+    "monotonic": 13604.462838415,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757755.726609,
+    "monotonic": 13604.972480494,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757757.7278986,
+    "monotonic": 13606.973769939,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757758.821802,
+    "monotonic": 13608.067673167,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757768.052876,
+    "monotonic": 13617.298747301,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757768.053066,
+    "monotonic": 13617.298937448,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757768.1106665,
+    "monotonic": 13617.356537667,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_wait"
+  },
+  {
+    "timestamp": 1792757768.230575,
+    "monotonic": 13617.476446358,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_wait"
+  },
+  {
+    "timestamp": 1792757768.5620408,
+    "monotonic": 13617.807912686,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757769.9613085,
+    "monotonic": 13619.207179575,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757772.2075245,
+    "monotonic": 13621.453395829,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757772.4636374,
+    "monotonic": 13621.709508438,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757777.0294607,
+    "monotonic": 13626.27533192,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757777.0295112,
+    "monotonic": 13626.275382512,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757777.5322506,
+    "monotonic": 13626.778122465,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757778.9175959,
+    "monotonic": 13628.163467081,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757780.656695,
+    "monotonic": 13629.902565919,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757780.8565521,
+    "monotonic": 13630.102423326,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757781.19252,
+    "monotonic": 13630.438391129,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757782.1282191,
+    "monotonic": 13631.374090221,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757783.702986,
+    "monotonic": 13632.948857226,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757785.9021888,
+    "monotonic": 13635.148060107,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757785.902235,
+    "monotonic": 13635.148106567,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757786.4217186,
+    "monotonic": 13635.667589913,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757787.768482,
+    "monotonic": 13637.014353143,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757788.406293,
+    "monotonic": 13637.652164112,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757795.4701188,
+    "monotonic": 13644.715989996,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757795.4701662,
+    "monotonic": 13644.716037578,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757795.9763694,
+    "monotonic": 13645.222241145,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757797.987736,
+    "monotonic": 13647.233607299,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757799.452785,
+    "monotonic": 13648.698656046,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757805.6941812,
+    "monotonic": 13654.940052402,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757805.694238,
+    "monotonic": 13654.94010939,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757806.2220988,
+    "monotonic": 13655.467970392,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757807.459561,
+    "monotonic": 13656.705432373,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757809.9774728,
+    "monotonic": 13659.223343868,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757811.7500484,
+    "monotonic": 13660.995919633,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757816.580201,
+    "monotonic": 13665.826072276,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757816.5802445,
+    "monotonic": 13665.826115927,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757817.0999327,
+    "monotonic": 13666.345804286,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757819.0916388,
+    "monotonic": 13668.337510027,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757822.1304412,
+    "monotonic": 13671.376312511,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757825.4319775,
+    "monotonic": 13674.67784885,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757825.4322004,
+    "monotonic": 13674.678071925,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757825.9501972,
+    "monotonic": 13675.196068471,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757827.937514,
+    "monotonic": 13677.183385172,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757829.4800022,
+    "monotonic": 13678.725873348,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757829.48005,
+    "monotonic": 13678.725921497,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757829.9889123,
+    "monotonic": 13679.234783724,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757831.9812453,
+    "monotonic": 13681.227116482,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757834.9357274,
+    "monotonic": 13684.181598641,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "medium"
+  },
+  {
+    "timestamp": 1792757836.344714,
+    "monotonic": 13685.590585409,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757836.344763,
+    "monotonic": 13685.590634589,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757836.8731117,
+    "monotonic": 13686.118983269,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757838.8585474,
+    "monotonic": 13688.104418743,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757840.860421,
+    "monotonic": 13690.106292116,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757840.8604639,
+    "monotonic": 13690.106335236,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757841.3796756,
+    "monotonic": 13690.625547163,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757843.3649366,
+    "monotonic": 13692.610807836,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757845.9940996,
+    "monotonic": 13695.239970773,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "medium"
+  },
+  {
+    "timestamp": 1792757865.087746,
+    "monotonic": 13714.333617139,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757865.087788,
+    "monotonic": 13714.333659506,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757865.5979724,
+    "monotonic": 13714.843843717,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757865.7955456,
+    "monotonic": 13715.041416761,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757868.3031855,
+    "monotonic": 13717.549056684,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757871.7285073,
+    "monotonic": 13720.974378746,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757871.7285674,
+    "monotonic": 13720.974438563,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757872.251353,
+    "monotonic": 13721.497224676,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757873.8200278,
+    "monotonic": 13723.065899216,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757876.3287427,
+    "monotonic": 13725.574613779,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757877.6812847,
+    "monotonic": 13726.927156199,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757877.681328,
+    "monotonic": 13726.927199306,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757878.0163715,
+    "monotonic": 13727.262242582,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_wait"
+  },
+  {
+    "timestamp": 1792757878.158477,
+    "monotonic": 13727.404348206,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_wait"
+  },
+  {
+    "timestamp": 1792757878.1895618,
+    "monotonic": 13727.435433692,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757880.192198,
+    "monotonic": 13729.438069201,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757880.678198,
+    "monotonic": 13729.924069111,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757882.770205,
+    "monotonic": 13732.016076165,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757882.7703083,
+    "monotonic": 13732.01617987,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757883.2832198,
+    "monotonic": 13732.529091046,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757885.27363,
+    "monotonic": 13734.519501222,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757885.3785198,
+    "monotonic": 13734.624391153,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757888.6039455,
+    "monotonic": 13737.8498167,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757888.6039815,
+    "monotonic": 13737.849852864,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757889.1192122,
+    "monotonic": 13738.365083458,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757891.11976,
+    "monotonic": 13740.365631233,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757891.3589983,
+    "monotonic": 13740.604869662,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757891.359047,
+    "monotonic": 13740.604918278,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757891.8489463,
+    "monotonic": 13741.094817738,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757892.7385657,
+    "monotonic": 13741.984436957,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757895.0527554,
+    "monotonic": 13744.298626547,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757895.2580392,
+    "monotonic": 13744.503910379,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757899.2934377,
+    "monotonic": 13748.539309066,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757899.2934928,
+    "monotonic": 13748.539364073,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757899.805856,
+    "monotonic": 13749.05172746,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757901.806492,
+    "monotonic": 13751.052363402,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757902.6827564,
+    "monotonic": 13751.928627623,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757903.0709715,
+    "monotonic": 13752.31684263,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757903.0710244,
+    "monotonic": 13752.316895653,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757903.5866039,
+    "monotonic": 13752.832475205,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757905.0732641,
+    "monotonic": 13754.319135206,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757907.5162723,
+    "monotonic": 13756.762143675,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757909.9535606,
+    "monotonic": 13759.199431717,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "medium"
+  },
+  {
+    "timestamp": 1792757909.9535646,
+    "monotonic": 13759.199435885,
+    "container_name": "serverless-snap",
+    "event": "prewarm_hold",
+    "class": null
+  },
+  {
+    "timestamp": 1792757911.1208494,
+    "monotonic": 13760.366720559,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757914.3752732,
+    "monotonic": 13763.621144699,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757914.3753207,
+    "monotonic": 13763.621192002,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757914.891072,
+    "monotonic": 13764.136943264,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757916.8768065,
+    "monotonic": 13766.12267751,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757917.5634506,
+    "monotonic": 13766.80932204,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757917.5634987,
+    "monotonic": 13766.809370194,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757918.0819416,
+    "monotonic": 13767.327813026,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757920.072874,
+    "monotonic": 13769.318745224,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757920.823953,
+    "monotonic": 13770.069824177,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "medium"
+  },
+  {
+    "timestamp": 1792757924.4903588,
+    "monotonic": 13773.736230003,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757924.4903939,
+    "monotonic": 13773.736265154,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757925.0158556,
+    "monotonic": 13774.261727179,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757926.9922318,
+    "monotonic": 13776.238103016,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757928.6583009,
+    "monotonic": 13777.904172128,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "medium"
+  },
+  {
+    "timestamp": 1792757945.4510276,
+    "monotonic": 13794.696899132,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757945.4510756,
+    "monotonic": 13794.696946955,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757945.9664063,
+    "monotonic": 13795.21227811,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757947.9652934,
+    "monotonic": 13797.211164621,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757952.22764,
+    "monotonic": 13801.473511376,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757952.2276978,
+    "monotonic": 13801.473569366,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757952.7404182,
+    "monotonic": 13801.98628963,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757954.741572,
+    "monotonic": 13803.987443041,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757960.3646636,
+    "monotonic": 13809.610534758,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "medium"
+  },
+  {
+    "timestamp": 1792757962.9345665,
+    "monotonic": 13812.180437805,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757962.9346197,
+    "monotonic": 13812.180491157,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757963.4857347,
+    "monotonic": 13812.731606168,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757965.437932,
+    "monotonic": 13814.683803318,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757969.3387215,
+    "monotonic": 13818.584592786,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757969.33876,
+    "monotonic": 13818.584631342,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757969.3756766,
+    "monotonic": 13818.621547794,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_wait"
+  },
+  {
+    "timestamp": 1792757969.5084,
+    "monotonic": 13818.754271166,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_wait"
+  },
+  {
+    "timestamp": 1792757969.760976,
+    "monotonic": 13819.006847239,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_wait"
+  },
+  {
+    "timestamp": 1792757969.8559916,
+    "monotonic": 13819.101863223,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757970.1032965,
+    "monotonic": 13819.349167778,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757970.3718784,
+    "monotonic": 13819.617749605,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757970.509939,
+    "monotonic": 13819.755810259,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757970.5393906,
+    "monotonic": 13819.785261818,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757970.7173495,
+    "monotonic": 13819.963220838,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757971.1006033,
+    "monotonic": 13820.346474475,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757971.1120653,
+    "monotonic": 13820.357936537,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757971.1167488,
+    "monotonic": 13820.362620057,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757973.6273532,
+    "monotonic": 13822.87322427,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757974.9692955,
+    "monotonic": 13824.215166882,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757974.9693458,
+    "monotonic": 13824.215217138,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757975.482296,
+    "monotonic": 13824.728167561,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757975.8415895,
+    "monotonic": 13825.087460751,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757977.482986,
+    "monotonic": 13826.728857235,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757977.7670639,
+    "monotonic": 13827.012935198,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757977.7671068,
+    "monotonic": 13827.012978232,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757977.842148,
+    "monotonic": 13827.088019312,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_wait"
+  },
+  {
+    "timestamp": 1792757978.1653664,
+    "monotonic": 13827.411237934,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_wait"
+  },
+  {
+    "timestamp": 1792757978.243822,
+    "monotonic": 13827.489693277,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_wait"
+  },
+  {
+    "timestamp": 1792757978.2673292,
+    "monotonic": 13827.513200664,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757978.2983775,
+    "monotonic": 13827.544248542,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757978.3081758,
+    "monotonic": 13827.554047076,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757979.0816023,
+    "monotonic": 13828.327473486,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757979.0880985,
+    "monotonic": 13828.333969727,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757979.1682281,
+    "monotonic": 13828.414099555,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757979.1722157,
+    "monotonic": 13828.418086955,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757979.6746016,
+    "monotonic": 13828.920472537,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757979.6832635,
+    "monotonic": 13828.929134642,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757979.8983843,
+    "monotonic": 13829.144255579,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757979.9044762,
+    "monotonic": 13829.150347308,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757980.054128,
+    "monotonic": 13829.299999115,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757980.0641887,
+    "monotonic": 13829.310059767,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757980.4293516,
+    "monotonic": 13829.675222963,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757980.432982,
+    "monotonic": 13829.678853159,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757980.4966218,
+    "monotonic": 13829.742493003,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757980.50578,
+    "monotonic": 13829.751651071,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757980.6443448,
+    "monotonic": 13829.890216143,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757980.6528375,
+    "monotonic": 13829.898708945,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757980.908443,
+    "monotonic": 13830.154314175,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757980.9155586,
+    "monotonic": 13830.161429742,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757981.139426,
+    "monotonic": 13830.38529738,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757981.1469705,
+    "monotonic": 13830.392841846,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "medium"
+  },
+  {
+    "timestamp": 1792757981.1469758,
+    "monotonic": 13830.392846904,
+    "container_name": "serverless-snap",
+    "event": "prewarm_hold",
+    "class": null
+  },
+  {
+    "timestamp": 1792757981.480121,
+    "monotonic": 13830.725991998,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757981.4824266,
+    "monotonic": 13830.72829786,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "medium"
+  },
+  {
+    "timestamp": 1792757981.482429,
+    "monotonic": 13830.728299953,
+    "container_name": "serverless-snap",
+    "event": "prewarm_hold",
+    "class": null
+  },
+  {
+    "timestamp": 1792757981.733594,
+    "monotonic": 13830.979465098,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757981.7351089,
+    "monotonic": 13830.980979998,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "medium"
+  },
+  {
+    "timestamp": 1792757981.735111,
+    "monotonic": 13830.980981901,
+    "container_name": "serverless-snap",
+    "event": "prewarm_hold",
+    "class": null
+  },
+  {
+    "timestamp": 1792757981.8001785,
+    "monotonic": 13831.046049714,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792757981.8078167,
+    "monotonic": 13831.05368781,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "medium"
+  },
+  {
+    "timestamp": 1792757981.8078196,
+    "monotonic": 13831.053690565,
+    "container_name": "serverless-snap",
+    "event": "prewarm_hold",
+    "class": null
+  },
+  {
+    "timestamp": 1792757984.3124943,
+    "monotonic": 13833.558365481,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757985.5133488,
+    "monotonic": 13834.759220159,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757985.513391,
+    "monotonic": 13834.759262581,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757986.0373647,
+    "monotonic": 13835.28323613,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757986.1100562,
+    "monotonic": 13835.355927528,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757988.021895,
+    "monotonic": 13837.267766116,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757993.6319587,
+    "monotonic": 13842.87783004,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757993.6320078,
+    "monotonic": 13842.877879374,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757994.1574144,
+    "monotonic": 13843.403285929,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792757996.143799,
+    "monotonic": 13845.389670299,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792757996.292986,
+    "monotonic": 13845.538857007,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792757998.5348628,
+    "monotonic": 13847.780734089,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792757998.5349033,
+    "monotonic": 13847.780774518,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792757998.8416104,
+    "monotonic": 13848.087481603,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_wait"
+  },
+  {
+    "timestamp": 1792757999.0572627,
+    "monotonic": 13848.303133867,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758000.9298203,
+    "monotonic": 13850.175691596,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792758001.2405722,
+    "monotonic": 13850.486443457,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792758002.204076,
+    "monotonic": 13851.449947142,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792758003.6839259,
+    "monotonic": 13852.929796966,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792758004.7212648,
+    "monotonic": 13853.967136075,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758004.7704933,
+    "monotonic": 13854.016364422,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758004.770502,
+    "monotonic": 13854.016373357,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758005.2714896,
+    "monotonic": 13854.517360928,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758006.3791578,
+    "monotonic": 13855.625029053,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792758007.2879765,
+    "monotonic": 13856.533847711,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758021.8697615,
+    "monotonic": 13871.1156329,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758021.8698912,
+    "monotonic": 13871.11576252,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758022.3773694,
+    "monotonic": 13871.62324094,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758024.378934,
+    "monotonic": 13873.624805175,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758027.9311194,
+    "monotonic": 13877.176990489,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792758030.2230532,
+    "monotonic": 13879.468924695,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758030.2232745,
+    "monotonic": 13879.469145829,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758030.2908905,
+    "monotonic": 13879.53676169,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_wait"
+  },
+  {
+    "timestamp": 1792758030.588556,
+    "monotonic": 13879.834427656,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_wait"
+  },
+  {
+    "timestamp": 1792758030.6440797,
+    "monotonic": 13879.889950939,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_wait"
+  },
+  {
+    "timestamp": 1792758030.670024,
+    "monotonic": 13879.915895016,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_wait"
+  },
+  {
+    "timestamp": 1792758030.7283769,
+    "monotonic": 13879.97424827,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758030.7842925,
+    "monotonic": 13880.030163355,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792758030.8210697,
+    "monotonic": 13880.066941002,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792758031.083694,
+    "monotonic": 13880.329565357,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792758033.3297005,
+    "monotonic": 13882.575571502,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758033.8713927,
+    "monotonic": 13883.117264063,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758033.8715217,
+    "monotonic": 13883.117393061,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758034.3758357,
+    "monotonic": 13883.621707135,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758034.771624,
+    "monotonic": 13884.017495482,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792758036.3855348,
+    "monotonic": 13885.631405934,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758040.4793677,
+    "monotonic": 13889.725239047,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758040.4794216,
+    "monotonic": 13889.725293008,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758040.8857393,
+    "monotonic": 13890.131610432,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_wait"
+  },
+  {
+    "timestamp": 1792758041.0021002,
+    "monotonic": 13890.247971741,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758042.5052927,
+    "monotonic": 13891.751163771,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792758043.3988788,
+    "monotonic": 13892.644749875,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758043.7645125,
+    "monotonic": 13893.010383879,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758043.7645662,
+    "monotonic": 13893.010437669,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758044.2715292,
+    "monotonic": 13893.517400707,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758045.5660186,
+    "monotonic": 13894.811889825,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792758046.268984,
+    "monotonic": 13895.514855328,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758046.9869945,
+    "monotonic": 13896.23286583,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758046.9870517,
+    "monotonic": 13896.232923226,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758047.5013134,
+    "monotonic": 13896.747184954,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758048.994792,
+    "monotonic": 13898.240663037,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792758049.0250087,
+    "monotonic": 13898.270879883,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792758050.116406,
+    "monotonic": 13899.362277296,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792758051.5437984,
+    "monotonic": 13900.789669647,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758058.988013,
+    "monotonic": 13908.233884382,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758058.9881413,
+    "monotonic": 13908.234012628,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758059.4962637,
+    "monotonic": 13908.742135066,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758061.2494438,
+    "monotonic": 13910.495315105,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792758063.7635927,
+    "monotonic": 13913.009463983,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758064.2199924,
+    "monotonic": 13913.465863507,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792758081.5355983,
+    "monotonic": 13930.781469551,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758081.5356603,
+    "monotonic": 13930.781532076,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758082.0564501,
+    "monotonic": 13931.30232141,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758082.121179,
+    "monotonic": 13931.367050416,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792758084.6329162,
+    "monotonic": 13933.878787482,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758087.3380387,
+    "monotonic": 13936.583910232,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758087.3380883,
+    "monotonic": 13936.583959424,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758087.8577912,
+    "monotonic": 13937.103662675,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758089.85398,
+    "monotonic": 13939.099851476,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758091.744084,
+    "monotonic": 13940.989955411,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758091.7441406,
+    "monotonic": 13940.990011996,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758092.2544868,
+    "monotonic": 13941.50035799,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758094.2600012,
+    "monotonic": 13943.505872505,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758096.555956,
+    "monotonic": 13945.801827101,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792758097.1287258,
+    "monotonic": 13946.374597083,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758097.1287804,
+    "monotonic": 13946.374651504,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758097.641528,
+    "monotonic": 13946.887399194,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758099.6481779,
+    "monotonic": 13948.894049094,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758100.0740683,
+    "monotonic": 13949.319939548,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758100.0741181,
+    "monotonic": 13949.319989532,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758100.5718415,
+    "monotonic": 13949.817713141,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758102.3520603,
+    "monotonic": 13951.597931669,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792758104.8583167,
+    "monotonic": 13954.104187827,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758105.665371,
+    "monotonic": 13954.91124209,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792758110.9317422,
+    "monotonic": 13960.177613443,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758110.931799,
+    "monotonic": 13960.177670318,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758111.4502864,
+    "monotonic": 13960.69615753,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758111.9774354,
+    "monotonic": 13961.223306648,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792758114.494285,
+    "monotonic": 13963.740156312,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758115.3789942,
+    "monotonic": 13964.6248655,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792758119.7855964,
+    "monotonic": 13969.031467794,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758119.7856328,
+    "monotonic": 13969.031504244,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758120.3062294,
+    "monotonic": 13969.552100635,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758122.2917767,
+    "monotonic": 13971.53764806,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758124.3138301,
+    "monotonic": 13973.559701454,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792758134.9294672,
+    "monotonic": 13984.175338677,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758134.9295042,
+    "monotonic": 13984.175375588,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758135.4760878,
+    "monotonic": 13984.721959367,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758136.1537867,
+    "monotonic": 13985.39965794,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792758138.6676583,
+    "monotonic": 13987.913529491,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758141.5838497,
+    "monotonic": 13990.829721041,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792758179.6395164,
+    "monotonic": 14028.885387752,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758179.6395528,
+    "monotonic": 14028.885424153,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758180.1543908,
+    "monotonic": 14029.400262167,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758181.3023403,
+    "monotonic": 14030.54821149,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792758181.5440457,
+    "monotonic": 14030.78991681,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792758184.0643528,
+    "monotonic": 14033.310223921,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758187.8070016,
+    "monotonic": 14037.052872933,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758187.8070495,
+    "monotonic": 14037.052920782,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758188.3269184,
+    "monotonic": 14037.572789729,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758190.3265126,
+    "monotonic": 14039.572383843,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758195.2622073,
+    "monotonic": 14044.508078522,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792758202.7269094,
+    "monotonic": 14051.972780795,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758202.7269619,
+    "monotonic": 14051.972833282,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758203.2451115,
+    "monotonic": 14052.490982889,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758205.2305336,
+    "monotonic": 14054.476404786,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758212.221269,
+    "monotonic": 14061.467140307,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792758214.316801,
+    "monotonic": 14063.562672396,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758214.3168495,
+    "monotonic": 14063.562720786,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758214.8329935,
+    "monotonic": 14064.078865346,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758216.833641,
+    "monotonic": 14066.079512058,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758224.242553,
+    "monotonic": 14073.488424377,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792758231.2556129,
+    "monotonic": 14080.501484231,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758231.2556672,
+    "monotonic": 14080.501538611,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758231.7630506,
+    "monotonic": 14081.008921917,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758233.7646549,
+    "monotonic": 14083.010525993,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758239.3879988,
+    "monotonic": 14088.633870025,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758239.3880484,
+    "monotonic": 14088.633919857,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758239.9008553,
+    "monotonic": 14089.146726864,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758241.889642,
+    "monotonic": 14091.135513267,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758242.6243546,
+    "monotonic": 14091.870225777,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758242.6243937,
+    "monotonic": 14091.870264992,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758243.1335337,
+    "monotonic": 14092.379405024,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758245.1347082,
+    "monotonic": 14094.380579492,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758250.5420642,
+    "monotonic": 14099.787935543,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758250.5421007,
+    "monotonic": 14099.787972555,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758251.0531938,
+    "monotonic": 14100.29906504,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758253.0500293,
+    "monotonic": 14102.295900456,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758256.0743146,
+    "monotonic": 14105.320185918,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758256.07439,
+    "monotonic": 14105.320261292,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758256.595962,
+    "monotonic": 14105.841833542,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758258.5866156,
+    "monotonic": 14107.832486665,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758261.7349372,
+    "monotonic": 14110.980808324,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758261.7349858,
+    "monotonic": 14110.980857054,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758262.0365357,
+    "monotonic": 14111.282406864,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_wait"
+  },
+  {
+    "timestamp": 1792758262.2557886,
+    "monotonic": 14111.501660183,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758262.371311,
+    "monotonic": 14111.617182174,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792758262.375431,
+    "monotonic": 14111.621302397,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792758262.6312072,
+    "monotonic": 14111.877078251,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792758262.825848,
+    "monotonic": 14112.071719186,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792758262.8700233,
+    "monotonic": 14112.115894444,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792758263.1746886,
+    "monotonic": 14112.4205596,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792758265.3757434,
+    "monotonic": 14114.621614591,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758266.0986862,
+    "monotonic": 14115.344557596,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758266.0987344,
+    "monotonic": 14115.344605585,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758266.6056712,
+    "monotonic": 14115.851542565,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758267.0824187,
+    "monotonic": 14116.328289791,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792758268.6035058,
+    "monotonic": 14117.849377184,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758275.1634142,
+    "monotonic": 14124.409285663,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758275.163455,
+    "monotonic": 14124.40932627,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758275.3905272,
+    "monotonic": 14124.636398482,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_wait"
+  },
+  {
+    "timestamp": 1792758275.5782757,
+    "monotonic": 14124.824146615,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_wait"
+  },
+  {
+    "timestamp": 1792758275.6751325,
+    "monotonic": 14124.921004031,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758276.677577,
+    "monotonic": 14125.923448131,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792758277.7522511,
+    "monotonic": 14126.99812229,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792758279.1891963,
+    "monotonic": 14128.435067479,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758279.2809951,
+    "monotonic": 14128.526866498,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758279.2810297,
+    "monotonic": 14128.526900975,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758279.7804608,
+    "monotonic": 14129.02633222,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758280.6166754,
+    "monotonic": 14129.862546524,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792758281.7974262,
+    "monotonic": 14131.043297462,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758283.6974964,
+    "monotonic": 14132.943368328,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758283.6976485,
+    "monotonic": 14132.943519949,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758284.219549,
+    "monotonic": 14133.465420236,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758284.9931264,
+    "monotonic": 14134.23899751,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792758286.6345122,
+    "monotonic": 14135.880383421,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792758287.499756,
+    "monotonic": 14136.745627321,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758289.465463,
+    "monotonic": 14138.71133445,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758289.46551,
+    "monotonic": 14138.711381308,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758289.9707997,
+    "monotonic": 14139.216671273,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758291.7593615,
+    "monotonic": 14141.00523276,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792758291.9653955,
+    "monotonic": 14141.21126663,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758311.2207475,
+    "monotonic": 14160.466618842,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758311.220796,
+    "monotonic": 14160.466667449,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758311.768547,
+    "monotonic": 14161.014418536,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758313.731749,
+    "monotonic": 14162.977620268,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758319.1552305,
+    "monotonic": 14168.401101597,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792758320.4783077,
+    "monotonic": 14169.724179054,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758320.4783516,
+    "monotonic": 14169.724222922,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758320.986801,
+    "monotonic": 14170.232672436,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758322.9841883,
+    "monotonic": 14172.230059505,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758328.616576,
+    "monotonic": 14177.862447229,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "medium"
+  },
+  {
+    "timestamp": 1792758331.6357994,
+    "monotonic": 14180.881670628,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758331.6358607,
+    "monotonic": 14180.881732214,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758332.161393,
+    "monotonic": 14181.407264397,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758334.1368196,
+    "monotonic": 14183.382690859,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758340.484428,
+    "monotonic": 14189.730299232,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "medium"
+  },
+  {
+    "timestamp": 1792758352.2102473,
+    "monotonic": 14201.45611854,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758352.2103312,
+    "monotonic": 14201.456202497,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758352.753513,
+    "monotonic": 14201.999384649,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758353.3350737,
+    "monotonic": 14202.580944998,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792758353.7031224,
+    "monotonic": 14202.948993516,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792758354.3456085,
+    "monotonic": 14203.591479601,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792758354.4951725,
+    "monotonic": 14203.741044035,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792758354.8500137,
+    "monotonic": 14204.095884902,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792758355.2279482,
+    "monotonic": 14204.473819361,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792758355.4578087,
+    "monotonic": 14204.703679813,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792758355.4932957,
+    "monotonic": 14204.739166902,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792758355.6893992,
+    "monotonic": 14204.935270333,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792758355.7731977,
+    "monotonic": 14205.019068784,
+    "container_name": "serverless-snap",
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792758358.198685,
+    "monotonic": 14207.444556173,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758368.6852117,
+    "monotonic": 14217.93108288,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758368.6852582,
+    "monotonic": 14217.931129687,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758369.1957633,
+    "monotonic": 14218.441634877,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758371.1987817,
+    "monotonic": 14220.44465284,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758371.2789164,
+    "monotonic": 14220.524787723,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758371.2789493,
+    "monotonic": 14220.524820742,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758371.7771614,
+    "monotonic": 14221.023032852,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758373.7819006,
+    "monotonic": 14223.027771806,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758374.489686,
+    "monotonic": 14223.735557112,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792758375.3267214,
+    "monotonic": 14224.572592827,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758375.326772,
+    "monotonic": 14224.572643301,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758375.84044,
+    "monotonic": 14225.086311578,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758377.84609,
+    "monotonic": 14227.091961148,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758378.5908673,
+    "monotonic": 14227.836738441,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792758380.3086355,
+    "monotonic": 14229.554506737,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758380.3086717,
+    "monotonic": 14229.554542991,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758380.833724,
+    "monotonic": 14230.079595129,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758382.8097057,
+    "monotonic": 14232.055576788,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758383.892784,
+    "monotonic": 14233.138655238,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "medium"
+  },
+  {
+    "timestamp": 1792758384.7019982,
+    "monotonic": 14233.947869638,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758384.702052,
+    "monotonic": 14233.947923526,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758385.2314465,
+    "monotonic": 14234.47731835,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758387.2103016,
+    "monotonic": 14236.456172839,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758388.3354077,
+    "monotonic": 14237.58127886,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "medium"
+  },
+  {
+    "timestamp": 1792758393.6990566,
+    "monotonic": 14242.944927952,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758393.6991098,
+    "monotonic": 14242.944981153,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758394.2109277,
+    "monotonic": 14243.456798928,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758396.2082152,
+    "monotonic": 14245.454086558,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758398.7403772,
+    "monotonic": 14247.986248311,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "medium"
+  },
+  {
+    "timestamp": 1792758399.004417,
+    "monotonic": 14248.25028834,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758399.0045455,
+    "monotonic": 14248.250416741,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758399.5288947,
+    "monotonic": 14248.774766295,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758401.5223508,
+    "monotonic": 14250.768221942,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758403.9338422,
+    "monotonic": 14253.179713268,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "medium"
+  },
+  {
+    "timestamp": 1792758407.0424726,
+    "monotonic": 14256.28834414,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758407.0426335,
+    "monotonic": 14256.2885048,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758407.5588825,
+    "monotonic": 14256.804753882,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758409.549352,
+    "monotonic": 14258.795223138,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758412.7072587,
+    "monotonic": 14261.953129837,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "medium"
+  },
+  {
+    "timestamp": 1792758418.447239,
+    "monotonic": 14267.693110245,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758418.4472876,
+    "monotonic": 14267.693158937,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758418.9810848,
+    "monotonic": 14268.226956682,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758420.9660757,
+    "monotonic": 14270.211946893,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758422.3515472,
+    "monotonic": 14271.597418589,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758422.3515947,
+    "monotonic": 14271.597466007,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758422.8614702,
+    "monotonic": 14272.107341498,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758424.861712,
+    "monotonic": 14274.107583163,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758426.242877,
+    "monotonic": 14275.488748297,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758426.2429194,
+    "monotonic": 14275.488790833,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758426.5388453,
+    "monotonic": 14275.784716416,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_wait"
+  },
+  {
+    "timestamp": 1792758426.7685285,
+    "monotonic": 14276.014399889,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758429.0468898,
+    "monotonic": 14278.292760919,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758430.0535357,
+    "monotonic": 14279.299406806,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792758432.9715445,
+    "monotonic": 14282.217415975,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758432.9715889,
+    "monotonic": 14282.217460103,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758433.512663,
+    "monotonic": 14282.758534237,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758435.4766622,
+    "monotonic": 14284.722533439,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758437.1666636,
+    "monotonic": 14286.412534757,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792758443.505285,
+    "monotonic": 14292.751156447,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758443.5053513,
+    "monotonic": 14292.751222792,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758444.0227594,
+    "monotonic": 14293.268631068,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758446.01171,
+    "monotonic": 14295.257581025,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758449.4082904,
+    "monotonic": 14298.654161413,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "medium"
+  },
+  {
+    "timestamp": 1792758457.2865264,
+    "monotonic": 14306.532397829,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758457.2865818,
+    "monotonic": 14306.532453187,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758457.80901,
+    "monotonic": 14307.054881357,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758459.7913506,
+    "monotonic": 14309.037221543,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758461.3116014,
+    "monotonic": 14310.557472754,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758461.3116565,
+    "monotonic": 14310.557527861,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758461.8309107,
+    "monotonic": 14311.076782229,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758463.8161178,
+    "monotonic": 14313.061988969,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758465.0291643,
+    "monotonic": 14314.275035551,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758465.0292468,
+    "monotonic": 14314.275118096,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758465.5391629,
+    "monotonic": 14314.785034377,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758467.5466733,
+    "monotonic": 14316.792544713,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758469.9953508,
+    "monotonic": 14319.241222094,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758469.9954221,
+    "monotonic": 14319.241293574,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758470.5193577,
+    "monotonic": 14319.765229351,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758472.507675,
+    "monotonic": 14321.753546036,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758474.58299,
+    "monotonic": 14323.828861182,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758474.5830424,
+    "monotonic": 14323.828913802,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758475.0946863,
+    "monotonic": 14324.340557523,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758477.021361,
+    "monotonic": 14326.267232264,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792758479.5374174,
+    "monotonic": 14328.783288616,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758480.9333582,
+    "monotonic": 14330.179229293,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "medium"
+  },
+  {
+    "timestamp": 1792758481.7971,
+    "monotonic": 14331.042971419,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758481.797154,
+    "monotonic": 14331.043025501,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758482.3238347,
+    "monotonic": 14331.56970618,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758484.299688,
+    "monotonic": 14333.545559331,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758485.4955645,
+    "monotonic": 14334.741435855,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758485.4956117,
+    "monotonic": 14334.741483253,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758486.0227299,
+    "monotonic": 14335.2686012,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758488.0106134,
+    "monotonic": 14337.256484572,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758489.1853125,
+    "monotonic": 14338.431183636,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "medium"
+  },
+  {
+    "timestamp": 1792758493.6195347,
+    "monotonic": 14342.865406308,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758493.6195827,
+    "monotonic": 14342.865454117,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758494.1374373,
+    "monotonic": 14343.383309191,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758496.122436,
+    "monotonic": 14345.36830723,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758498.4358342,
+    "monotonic": 14347.681705596,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758498.4358716,
+    "monotonic": 14347.681742762,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758498.9436188,
+    "monotonic": 14348.189490309,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758500.944942,
+    "monotonic": 14350.190813301,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758502.7110052,
+    "monotonic": 14351.956876439,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758502.7110586,
+    "monotonic": 14351.956930038,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758503.2203062,
+    "monotonic": 14352.466177793,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758505.2273247,
+    "monotonic": 14354.473195764,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758507.0331945,
+    "monotonic": 14356.279065785,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "medium"
+  },
+  {
+    "timestamp": 1792758517.5001447,
+    "monotonic": 14366.746016021,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758517.5003035,
+    "monotonic": 14366.746174871,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758518.013521,
+    "monotonic": 14367.25939234,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758519.7723627,
+    "monotonic": 14369.018233946,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792758522.2891805,
+    "monotonic": 14371.535051566,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758522.684102,
+    "monotonic": 14371.929973451,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758522.6841571,
+    "monotonic": 14371.930028512,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758523.1902575,
+    "monotonic": 14372.436129192,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758525.1854413,
+    "monotonic": 14374.431312567,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758527.2596776,
+    "monotonic": 14376.505548853,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792758528.3539789,
+    "monotonic": 14377.599850109,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758528.3540409,
+    "monotonic": 14377.599912143,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758528.8703535,
+    "monotonic": 14378.116224832,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758530.862088,
+    "monotonic": 14380.107959114,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758533.0606773,
+    "monotonic": 14382.306548661,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "medium"
+  },
+  {
+    "timestamp": 1792758546.5969431,
+    "monotonic": 14395.842814487,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758546.596991,
+    "monotonic": 14395.842862203,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758546.7992444,
+    "monotonic": 14396.045115556,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_wait"
+  },
+  {
+    "timestamp": 1792758547.1140592,
+    "monotonic": 14396.359930779,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758549.3027813,
+    "monotonic": 14398.548652524,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758552.6595268,
+    "monotonic": 14401.90539805,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792758560.5080826,
+    "monotonic": 14409.753954052,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758560.508148,
+    "monotonic": 14409.754019186,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758561.0349495,
+    "monotonic": 14410.280821169,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758563.0196984,
+    "monotonic": 14412.265569487,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758567.2525682,
+    "monotonic": 14416.498439659,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758567.2527997,
+    "monotonic": 14416.498671128,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758567.7613184,
+    "monotonic": 14417.007190316,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758568.332204,
+    "monotonic": 14417.578075444,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792758568.395405,
+    "monotonic": 14417.641276271,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792758570.8962104,
+    "monotonic": 14420.142081639,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758571.9573128,
+    "monotonic": 14421.203184073,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792758572.8163724,
+    "monotonic": 14422.062243604,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758572.8164651,
+    "monotonic": 14422.062336598,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758573.3312674,
+    "monotonic": 14422.577138876,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758575.3265533,
+    "monotonic": 14424.572424503,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758576.0819764,
+    "monotonic": 14425.327847784,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758576.0823083,
+    "monotonic": 14425.328179809,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758576.5917013,
+    "monotonic": 14425.837572967,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758578.5837758,
+    "monotonic": 14427.829647026,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758579.401184,
+    "monotonic": 14428.647055098,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792758580.0431137,
+    "monotonic": 14429.288985215,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758580.0431645,
+    "monotonic": 14429.289035725,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758580.5586274,
+    "monotonic": 14429.804498795,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758582.5579176,
+    "monotonic": 14431.803788892,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758583.2364638,
+    "monotonic": 14432.482335219,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758583.2365127,
+    "monotonic": 14432.482384065,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758583.7441487,
+    "monotonic": 14432.990020664,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758585.7535608,
+    "monotonic": 14434.999432026,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758586.318289,
+    "monotonic": 14435.564160304,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "medium"
+  },
+  {
+    "timestamp": 1792758594.668456,
+    "monotonic": 14443.914327605,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758594.6685607,
+    "monotonic": 14443.91443202,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758595.1990213,
+    "monotonic": 14444.44489273,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758595.9603262,
+    "monotonic": 14445.206197374,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  },
+  {
+    "timestamp": 1792758598.4781988,
+    "monotonic": 14447.724069984,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758599.922947,
+    "monotonic": 14449.168818043,
+    "container_name": null,
+    "event": "psp_tier",
+    "class": "low"
+  },
+  {
+    "timestamp": 1792758616.8104482,
+    "monotonic": 14466.056319412,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758616.8104966,
+    "monotonic": 14466.056367795,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758617.3270419,
+    "monotonic": 14466.572913229,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758619.3278573,
+    "monotonic": 14468.573728263,
+    "container_name": "serverless-snap",
+    "event": "reaper_expired",
+    "class": null
+  },
+  {
+    "timestamp": 1792758622.9071844,
+    "monotonic": 14472.15305568,
+    "container_name": "serverless-snap",
+    "event": "restore_start",
+    "class": null
+  },
+  {
+    "timestamp": 1792758622.9072797,
+    "monotonic": 14472.153150932,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "cold_restore"
+  },
+  {
+    "timestamp": 1792758623.4236395,
+    "monotonic": 14472.669511141,
+    "container_name": "serverless-snap",
+    "event": "boot_ready",
+    "class": null
+  },
+  {
+    "timestamp": 1792758624.521433,
+    "monotonic": 14473.767304346,
+    "container_name": "serverless-snap",
+    "event": "request_arrival",
+    "class": "warm"
+  }
+]
