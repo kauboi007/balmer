@@ -32,14 +32,12 @@ class EwmaGapPredictor:
             self.last = t
 
     def predict_next(self):
-        """Returns (predicted arrival time, anchor) or (None, None)."""
         with self._lock:
             if self.gap_hat is None:
                 return None, None
             return self.last + self.gap_hat, self.last
 
     def rel_error(self):
-        """(smoothed error / predicted gap, number of gaps seen). Ratio is None until an error exists."""
         with self._lock:
             if self.err_hat is None or self.gap_hat <= 0:
                 return None, self.n_gaps
@@ -47,7 +45,6 @@ class EwmaGapPredictor:
 
 
 def psp_tier(rel_err, n_gaps, hi, lo, min_gaps=5):
-    """Lower relative error means higher confidence."""
     if rel_err is None or n_gaps < min_gaps:
         return "low"
 
@@ -62,8 +59,7 @@ def psp_tier(rel_err, n_gaps, hi, lo, min_gaps=5):
 
 
 class Prewarmer(threading.Thread):
-    """Fires prewarm_fn(t_pred) once per arrival, when 'now' reaches
-    predicted arrival - start-up time (lead) - safety margin."""
+
 
     def __init__(self, pred, prewarm_fn, lead_s, margin_s=0.1, tick_s=0.01):
         super().__init__(daemon=True)

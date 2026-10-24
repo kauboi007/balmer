@@ -26,8 +26,8 @@ IS_COLD = True
 def current_rss_mb() -> float:
     with open("/proc/self/status") as f:
         for line in f:
-            if line.startswith("VmRSS:"):
-                return int(line.split()[1]) / 1024.0  # value is in kB
+            if line.startswith("VmRSS:"): #virtual memeory resident set size
+                return int(line.split()[1]) / 1024.0  #kB
     raise RuntimeError("VmRSS not found in /proc/self/status")
 
 @app.route("/health")

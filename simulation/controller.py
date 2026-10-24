@@ -16,8 +16,8 @@ IMAGE_NAME = "serverless-sim:latest"
 CONTAINER_PREFIX = "serverless-ctrl-"
 
 SNAP_PORT = 8080
-LEAD_BOOT = 0.72      # s, about p95 of measured cold boot
-LEAD_RESTORE = 0.56   # s, about p95 of measured restore
+LEAD_BOOT = 0.72
+LEAD_RESTORE = 0.56
 
 
 def check_image(image_name: str = IMAGE_NAME):
@@ -65,7 +65,7 @@ class ContainerManager:
         if use_psp:
             if psp_hi is None or psp_lo is None:
                 raise SystemExit("--psp needs --psp-hi and --psp-lo (run calibrate_psp.py first)")
-            use_restore = use_prewarm = True      # PSP always restores and always has a predictor
+            use_restore = use_prewarm = True
         self.use_psp = use_psp
         self.psp_hi = psp_hi
         self.psp_lo = psp_lo
@@ -77,23 +77,23 @@ class ContainerManager:
         self.grace = grace
         self.lock = threading.Lock()
 
-        # Lifecycle state
-        self.state = "NONE"  # NONE, BOOTING, READY
+
+        self.state = "NONE"
         self.last_arrival = 0.0
-        self.hold_until = 0.0            # prewarm: do not expire before this time
+        self.hold_until = 0.0
         self.endpoint = None
         self.boot_event = threading.Event()
         self.current_container_name = None
-        self.container_origin = None     # "request" or "prewarm"
-        self.container_served = False    # has a request used this container yet?
+        self.container_origin = None
+        self.container_served = False
         self.run_counter = 0
 
-        # Restore mode: single snapshot container, serialised kill/restore
+
         self.docker_lock = threading.Lock()
         self.snap_alive = False
         self.restore_count = 0
 
-        # Structured event log
+
         self.event_log = []
 
         check_image(self.image_name)
@@ -107,7 +107,7 @@ class ContainerManager:
 
         atexit.register(self.shutdown)
 
-        # Prewarm policy
+
         self.predictor = None
         if use_prewarm:
             self.predictor = EwmaGapPredictor(alpha)
@@ -115,7 +115,7 @@ class ContainerManager:
             self.prewarmer = Prewarmer(self.predictor, self.prewarm, lead, margin)
             self.prewarmer.start()
 
-        # Optional proactive background reaper thread
+
         if self.use_reaper:
             self.stop_reaper = threading.Event()
             self.reaper_thread = threading.Thread(target=self._reaper_loop, daemon=True)
@@ -196,16 +196,16 @@ class ContainerManager:
             if self.use_psp:
                 self.log_event("psp_tier", req_class=tier)
                 if tier == "low":
-                    return                       # not confident: spend nothing
+                    return
             if self.state == "BOOTING":
                 return
             hold = t_pred + self.grace
-            if self.state == "READY":            # still up: keep it alive until the arrival
+            if self.state == "READY":
                 if hold > self.hold_until:
                     self.hold_until = hold
                     self.log_event("prewarm_hold")
                 return
-            if tier != "high":                   # medium never starts a container speculatively
+            if tier != "high":
                 return
             self._launch("prewarm")
             self.hold_until = hold
@@ -240,7 +240,7 @@ class ContainerManager:
             if self.use_restore:
                 port = SNAP_PORT
                 with self.docker_lock:
-                    if self.snap_alive:                  # stale container still running
+                    if self.snap_alive:
                         subprocess.run(["docker", "kill", SNAP_NAME], capture_output=True)
                         self.snap_alive = False
                     self.restore_count += 1
@@ -324,14 +324,14 @@ class ContainerManager:
 
             elif self.state == "BOOTING":
                 if self.container_origin == "prewarm" and not self.container_served:
-                    request_class = "late_prewarm"       # arrived while the prewarm was booting
+                    request_class = "late_prewarm"
                     self.container_served = True
                 else:
                     request_class = "cold_wait"
                 self.last_arrival = now
                 self.log_event("request_arrival", req_class=request_class)
 
-            else:  # READY
+            else:
                 if self.container_origin == "prewarm" and not self.container_served:
                     request_class = "prewarm_hit"
                     self.container_served = True
@@ -370,7 +370,7 @@ class ControllerRequestHandler(BaseHTTPRequestHandler):
                 body = resp.read()
                 data = json.loads(body.decode("utf-8"))
 
-                # Annotate response payload with controller classification
+
                 data["controller_req_class"] = req_type
 
                 resp_bytes = json.dumps(data).encode("utf-8")
@@ -383,7 +383,7 @@ class ControllerRequestHandler(BaseHTTPRequestHandler):
             self.send_error(502, f"Bad Gateway forwarding to container: {e}")
 
     def log_message(self, format, *args):
-        # Silenced to prevent disk/console IO latency bias
+
         pass
 
 
